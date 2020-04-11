@@ -1,0 +1,40 @@
+.FondoAzulFuerte{
+    background-color:#002554 !important;
+}
+
+.FondoAzulMedio{
+    background-color:#236192!important;
+}
+
+.FondoAzulBajo{
+    background-color:#00AFD7;
+}
+
+.FondoOscuro{
+    background-color:#231F20;
+}
+
+
+footer{
+    color:#FFFFFF;
+    background-color:#002554 !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
+}
+
+body {
+    background-color: #FFFFFF !important;
+}
+
+.botonEstilo{
+        color: #fff;
+        background-color:#00ADEF!important;
+        border-color:#8BD2F4;
+
+}
+.LetraEstilo{
+    color: #fff;
+}
