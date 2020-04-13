@@ -99,7 +99,7 @@ $(document).ready(function () {
     $("#example").DataTable().columns.adjust().draw();
   });
 
-  $(".colorLetra").on("click", function () {
+  $("tbody > tr .colorLetra").on("click", function () {
     
  $("#myModal").modal('toggle');
  
