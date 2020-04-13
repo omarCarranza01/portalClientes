@@ -38,7 +38,7 @@ footer {
 
 body {
   background-color: #ffffff !important;
-  padding-top: 5.5rem;
+  padding-top: 6.5rem;
   padding-bottom: 4.3rem;
 }
 
@@ -253,22 +253,23 @@ body {
   border-radius: 0 !important;
 }
 
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
   background-color: #fff;
 }
 
 .table-hover tbody tr:hover,
 .table-hover tbody tr:hover td,
-.table-hover tbody tr:hover th{
-    background:#005481 !important;
-    color:#fff !important;
+.table-hover tbody tr:hover th {
+  background: #005481 !important;
+  color: #fff !important;
 }
 
-.colorLetra{
+.colorLetra {
   color: black;
 }
 
-.colorTitulos{
+.colorTitulos {
   color: #002554;
 }
 
@@ -408,7 +409,7 @@ body {
 }
 .timeline-horizontal .timeline-item {
   display: table-cell;
-  height:149px;
+  height: 149px;
   width: 20%;
   min-width: 206px; /* 320px */
   float: none !important;
@@ -445,4 +446,73 @@ body {
   top: auto;
   bottom: 0px;
   left: 43px;
+}
+
+.navbar {
+  min-height: 80px;
+}
+
+.navbar-brand {
+  padding: 0 15px;
+  height: 80px;
+  line-height: 80px;
+}
+
+.navbar-toggle {
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 23px;
+  padding: 9px 10px !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    padding-top: 26.5px;
+    padding-bottom: 26.5px;
+    line-height: 27px;
+  }
+}
+
+.navbar-custom {
+  background-color: #002554 !important;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #ffffff;
+}
+
+a.textMenuStyle {
+  color: white !important;
+  font-weight: bold;
+}
+
+a.disabled.textMenuStyle {
+  color: rgb(117, 117, 117) !important;
+}
+
+.h-55px {
+  height: 55px !important;
+}
+
+.line-h-3 {
+  line-height: 3;
+}
+
+li.active {
+  background-color: #0074b2ce !important;
+}
+
+.loginButtonMenu {
+  width: 9rem;
+  text-align-last: center;
 }

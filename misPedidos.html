@@ -30,24 +30,27 @@
         <div id="content-wrapper" class="d-flex flex-column" style="background-color: #ffffff;">
             <!-- Main Content -->
             <div id="content">
-                <nav class=" navbar navbar-expand navbar-light  topbar mb-4 static-top shadow FondoAzulOscuro fixed-top"
-                    style="padding-right: 0">
-
-                    <div class=" float-left">
-                        <img src="img/logotipo.png" style="width: 30%;">
-                    </div>
-
-                    <ul class="navbar-nav ml-auto FondoAzulOscuro ">
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" style="padding-left: 1.75rem ;" href="#"
-                                id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <span class="mr-2 d-lg-inline text-gray-600 small "><strong
-                                        style="color:rgb(255, 255, 255)" ;>USUARIO</strong></span>
-                            </a>
+                <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top navbar-custom">
+                    <a href="#" class="navbar-brand">
+                      <img src="img/rotoplas_logo.png" height="45" alt="CoolBrand">
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                    </button>
+          
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                      <ul class="navbar-nav">
+                        <li class="active"><a href="#" class="nav-item nav-link active textMenuStyle">Mis Pedidos</a></li>
+                        <li><a href="#" class="nav-item nav-link textMenuStyle">Consulta Existencia</a></li>
+                        <li><a href="#" class="nav-item nav-link textMenuStyle">Ligas de Interes</a></li>
+                        <li><a href="#" class="nav-item nav-link disabled textMenuStyle" tabindex="-1">Admin</a></li>
+                      </ul>
+                      <ul class="navbar-nav ml-auto">
+                        <li class="loginButtonMenu"><a href="#" class="nav-item nav-link textMenuStyle"><strong>Usuario</strong></a>
                         </li>
-                    </ul>
-                </nav>
+                      </ul>
+                    </div>
+                  </nav>
 
                 <div class="container containerFiltersOne">
                     <div class="accordion" id="myAccordion">
