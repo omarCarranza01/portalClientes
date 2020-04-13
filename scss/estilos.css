@@ -1,40 +1,74 @@
-.FondoAzulFuerte{
-    background-color:#002554 !important;
+.FondoAzulOscuro {
+  background-color: #002554 !important;
 }
 
-.FondoAzulMedio{
-    background-color:#236192!important;
+.FondoAzulFuerte {
+  /* background-color: #002554 !important; */
+  background-color: #005481 !important;
 }
 
-.FondoAzulBajo{
-    background-color:#00AFD7;
+.FondoAzulMedio {
+  /* background-color: #236192 !important; */
+  background-color: #0074b2 !important;
 }
 
-.FondoOscuro{
-    background-color:#231F20;
+.FondoAzulBajo {
+  /* background-color: #00afd7; */
+  background-color: #0090d0 !important;
 }
 
+.FondoOscuro {
+  background-color: #231f20;
+}
 
-footer{
-    color:#FFFFFF;
-    background-color:#002554 !important;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    color: white;
+footer.sticky-footer {
+    /* padding: 1rem 2rem 3rem 2rem !important; */
+    padding: 1rem 1rem 3rem 1rem !important;
+}
+
+footer {
+  color: #ffffff;
+  background-color: #002554 !important;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
 }
 
 body {
-    background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
+  padding-top: 4.5rem;
+  padding-bottom: 4.3rem;
 }
 
-.botonEstilo{
-        color: #fff;
-        background-color:#00ADEF!important;
-        border-color:#8BD2F4;
-
+.botonEstilo {
+  color: #fff;
+  background-color: #00adef !important;
+  border-color: #8bd2f4;
 }
-.LetraEstilo{
-    color: #fff;
+.LetraEstilo {
+  color: #fff;
+}
+
+.whiteColor {
+  color: white;
+}
+
+.cardContainer .card {
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.cardContainer .card:hover {
+  box-shadow: 0 0 6px black;
+}
+
+.cardContainer .card {
+  border: none !important;
+}
+
+.cardContainer .rotoImg {
+  border-radius: 0;
 }
