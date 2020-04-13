@@ -104,8 +104,13 @@ $(document).ready(function () {
  $("#myModal").modal('toggle');
  
   });
+  
 
-
+// Select all tabs
+$('.nav-tabs a').click(function(){
+  $(this).tab('show');
+})
+ 
 
 });
 
