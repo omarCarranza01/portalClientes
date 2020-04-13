@@ -40,7 +40,7 @@ var data2 = [{
 
 var data3 = [{
   docFactura: "2000107301",
-  fecha: "$100.27 MXP",
+  fecha: "12-05-2020",
   impNeto: "$626.68 MXP",
   Monto: "$626.68 MXP",
    
@@ -212,11 +212,11 @@ $(document).ready(function () {
   });
 
 
-  $(window).resize(function () {
-    $("#example").DataTable().columns.adjust().draw();
-    $("#example2").DataTable().columns.adjust().draw();
-    $("#example3").DataTable().columns.adjust().draw();
-  });
+  $(window).off().on('resize', function () {
+    setTimeout(function () {
+        $($.fn.dataTable.tables(true)).DataTable().columns.adjust().responsive.recalc().draw();
+    }, 100);
+});
 
   $("tbody > tr .colorLetra").on("click", function () {
     
