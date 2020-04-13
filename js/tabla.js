@@ -1,3 +1,55 @@
+var data2 = [{
+  pos: "1",
+  mat: "310092",
+  Descripcion: "MULTICONECTOR C/VALV-TUERCA UNION INTEG",
+  cant: "0",
+  cantEnt: "500",
+  um: "Pza",
+  monto: "$23232,2323",
+  precioNeto: "%3434",
+  fecEnt: "11-04-2020",
+  estatus:"activo",
+  
+},{
+  pos: "1",
+  mat: "310092",
+  Descripcion: "MULTICONECTOR C/VALV-TUERCA UNION INTEG",
+  cant: "0",
+  cantEnt: "500",
+  um: "Pza",
+  monto: "$23232,2323",
+  precioNeto: "%3434",
+  fecEnt: "11-04-2020",
+  estatus:"activo",
+  
+},{
+  pos: "1",
+  mat: "310092",
+  Descripcion: "MULTICONECTOR C/VALV-TUERCA UNION INTEG",
+  cant: "0",
+  cantEnt: "500",
+  um: "Pza",
+  monto: "$23232,2323",
+  precioNeto: "%3434",
+  fecEnt: "11-04-2020",
+  estatus:"activo",
+  
+}];
+
+
+
+var data3 = [{
+  docFactura: "2000107301",
+  fecha: "$100.27 MXP",
+  impNeto: "$626.68 MXP",
+  Monto: "$626.68 MXP",
+   
+},
+  
+];
+
+
+
 var inpescIngreso = [
   {
     DocComercial: 90071871,
@@ -95,8 +147,75 @@ $(document).ready(function () {
     },
   });
 
+  $("#example2").DataTable({
+    paging: true,
+    searching: false,
+    lengthChange: false,
+    data: data2,
+    scrollY: true,
+
+    columns: [
+      { data: "pos", class: "colorLetra" },
+      { data: "mat", class: "colorLetra" },
+      { data: "Descripcion", class: "colorLetra" },
+      { data: "cant", class: "colorLetra" },
+      { data: "cantEnt", class: "colorLetra" },
+      { data: "um", class: "colorLetra" },
+      { data: "monto", class: "colorLetra" },
+      { data: "precioNeto", class: "colorLetra" },
+      { data: "fecEnt", class: "colorLetra" },
+      { data: "estatus", class: "colorLetra" },
+    ],
+    columnDefs: [
+      {
+        targets: -1,
+        className: "dt-body-right",
+      },
+    ],
+    fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+      if (iDisplayIndex % 2 == 0) {
+        $("td", nRow).css("background-color", "#00afd7");
+      } else {
+        $("td", nRow).css("background-color", "#ffff");
+      }
+    },
+  });
+ 
+  
+  $("#example3").DataTable({
+    paging: true,
+    searching: false,
+    lengthChange: false,
+    data: data3,
+    scrollY: true,
+
+    columns: [
+      { data: "docFactura", class: "colorLetra" },
+      { data: "fecha", class: "colorLetra" },
+      { data: "impNeto", class: "colorLetra" },
+      { data: "Monto", class: "colorLetra" },
+     
+    ],
+    columnDefs: [
+      {
+        targets: -1,
+        className: "dt-body-right",
+      },
+    ],
+    fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+      if (iDisplayIndex % 2 == 0) {
+        $("td", nRow).css("background-color", "#00afd7");
+      } else {
+        $("td", nRow).css("background-color", "#ffff");
+      }
+    },
+  });
+
+
   $(window).resize(function () {
     $("#example").DataTable().columns.adjust().draw();
+    $("#example2").DataTable().columns.adjust().draw();
+    $("#example3").DataTable().columns.adjust().draw();
   });
 
   $("tbody > tr .colorLetra").on("click", function () {
