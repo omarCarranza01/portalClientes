@@ -22,8 +22,8 @@
 }
 
 footer.sticky-footer {
-    /* padding: 1rem 2rem 3rem 2rem !important; */
-    padding: 1rem 1rem 3rem 1rem !important;
+  /* padding: 1rem 2rem 3rem 2rem !important; */
+  padding: 1rem 1rem 3rem 1rem !important;
 }
 
 footer {
@@ -38,7 +38,7 @@ footer {
 
 body {
   background-color: #ffffff !important;
-  padding-top: 4.5rem;
+  padding-top: 5.5rem;
   padding-bottom: 4.3rem;
 }
 
@@ -71,4 +71,179 @@ body {
 
 .cardContainer .rotoImg {
   border-radius: 0;
+}
+
+.labelLeftInput {
+  /*text-align: right;*/
+  clear: both;
+  float: left;
+  /*margin-right: 20px;*/
+  /*margin-top: 7px;*/
+  max-width: 5em;
+  max-height: 27px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-wrap: break-word;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.fillWidthAvaible {
+  width: 100%;
+  width: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+}
+
+.fillHeightAvaible {
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+}
+
+.input-group-addon button,
+.input-group-btn button {
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /*// Put your IE10 + -specific CSS here*/
+  .input-group-addon,
+  .input-group-btn {
+    width: 0 !important;
+  }
+
+  div.form-group > div.input-group {
+    display: flex !important;
+  }
+
+  .labelLeftInput {
+    /*text-align: right;*/
+    clear: both;
+    float: left;
+    /*margin-right: 20px;*/
+    /*margin-top: 7px;*/
+    max-width: 9em;
+    max-height: 27px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-wrap: break-word;
+  }
+}
+
+.panelFilters {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/*.panel-heading div {
+    margin-top: -18px;
+    font-size: 15px;
+}*/
+
+.card-header div span {
+  margin-left: 5px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.panel-actions {
+  /*margin-top: -20px;*/
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.panel-actions a {
+  color: #333;
+}
+
+.panel-actions a i {
+  font-size: 15px;
+  /*top: 5px;*/
+  vertical-align: middle;
+}
+
+.panel-actions a svg {
+  font-size: 16px;
+  /*top: 5px;*/
+  vertical-align: middle;
+}
+
+.panel-fullscreen {
+  display: block;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+.no-border-radius {
+  border-radius: 0;
+}
+
+.panel.no-radius-TRL {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.vertical_align_text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.hidden-overflow {
+  overflow: hidden;
+}
+
+.chart-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.isResizable {
+  padding: 5px;
+  overflow: hidden;
+}
+
+.borderPanels {
+  border: 1px solid #f1f2f7 !important;
+}
+
+.float-right {
+  float: right;
+}
+
+.containerFiltersOne {
+  margin-bottom: 10vh;
+}
+
+.containerFiltersOne .card {
+  border-radius: 0 !important;
+}
+
+.containerFiltersOne .card .card-header[data-toggle="collapse"].collapsed {
+  border-radius: 0 !important;
+}
+
+.containerFiltersOne .card-header:first-child {
+  border-radius: 0 !important;
 }
