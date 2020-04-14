@@ -610,6 +610,7 @@ $(document).ready(function() {
         $(".nav-tabs a").off().on('click', function() {
             debugger;
             $(this).tab("show");
+            $('div.modal-body').animate({ scrollTop: 0 }, "slow");
             setTimeout(function() {
                 $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
             }, 200);
