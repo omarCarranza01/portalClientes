@@ -639,7 +639,7 @@ $(document).ready(function () {
       },],
       fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
         if (iDisplayIndex % 2 == 0) {
-          $("td", nRow).css("background-color", "rgb(0,144,208,.3)");
+          $("td", nRow).css({'background-color': "rgb(0, 144, 208, 0.3)" });
         } else {
           $("td", nRow).css("background-color", "#ffff");
         }
