@@ -483,3 +483,11 @@ select[readonly].select2-hidden-accessible
 div.status h4 {
   font-size: 11px !important;
 }
+
+.pr-0 {
+  padding-right: 0 !important;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
