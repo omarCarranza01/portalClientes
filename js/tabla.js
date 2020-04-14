@@ -423,9 +423,27 @@ var data2 = [{
 var data3 = [
   {
     docFactura: "2000107301",
-    fecha: "12-05-2020",
+    fecha: "10-05-2020",
     impNeto: "$626.68 MXP",
     Monto: "$626.68 MXP",
+  },
+  {
+    docFactura: "2000107302",
+    fecha: "11-04-2020",
+    impNeto: "$826.68 MXP",
+    Monto: "$626.68 MXP",
+  },
+  {
+    docFactura: "2000107303",
+    fecha: "12-05-2020",
+    impNeto: "$126.68 MXP",
+    Monto: "$226.68 MXP",
+  },
+  {
+    docFactura: "4000107304",
+    fecha: "12-04-2020",
+    impNeto: "$1626.68 MXP",
+    Monto: "$726.68 MXP",
   },
   {
     docFactura: "2000107301",
@@ -436,37 +454,19 @@ var data3 = [
   {
     docFactura: "2000107301",
     fecha: "12-05-2020",
-    impNeto: "$626.68 MXP",
-    Monto: "$626.68 MXP",
+    impNeto: "$126.68 MXP",
+    Monto: "$126.68 MXP",
   },
   {
-    docFactura: "2000107301",
-    fecha: "12-05-2020",
+    docFactura: "2010107301",
+    fecha: "12-08-2020",
     impNeto: "$626.68 MXP",
-    Monto: "$626.68 MXP",
+    Monto: "$226.68 MXP",
   },
   {
-    docFactura: "2000107301",
-    fecha: "12-05-2020",
-    impNeto: "$626.68 MXP",
-    Monto: "$626.68 MXP",
-  },
-  {
-    docFactura: "2000107301",
-    fecha: "12-05-2020",
-    impNeto: "$626.68 MXP",
-    Monto: "$626.68 MXP",
-  },
-  {
-    docFactura: "2000107301",
-    fecha: "12-05-2020",
-    impNeto: "$626.68 MXP",
-    Monto: "$626.68 MXP",
-  },
-  {
-    docFactura: "2000107301",
-    fecha: "12-05-2020",
-    impNeto: "$626.68 MXP",
+    docFactura: "2000107321",
+    fecha: "11-05-2020",
+    impNeto: "$126.68 MXP",
     Monto: "$626.68 MXP",
   },
   {
