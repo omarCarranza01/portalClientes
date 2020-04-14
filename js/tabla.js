@@ -1,54 +1,50 @@
-var data2 = [{
-  pos: "1",
-  mat: "310092",
-  Descripcion: "MULTICONECTOR C/VALV-TUERCA UNION INTEG",
-  cant: "0",
-  cantEnt: "500",
-  um: "Pza",
-  monto: "$23232,2323",
-  precioNeto: "%3434",
-  fecEnt: "11-04-2020",
-  estatus:"activo",
-  
-},{
-  pos: "1",
-  mat: "310092",
-  Descripcion: "MULTICONECTOR C/VALV-TUERCA UNION INTEG",
-  cant: "0",
-  cantEnt: "500",
-  um: "Pza",
-  monto: "$23232,2323",
-  precioNeto: "%3434",
-  fecEnt: "11-04-2020",
-  estatus:"activo",
-  
-},{
-  pos: "1",
-  mat: "310092",
-  Descripcion: "MULTICONECTOR C/VALV-TUERCA UNION INTEG",
-  cant: "0",
-  cantEnt: "500",
-  um: "Pza",
-  monto: "$23232,2323",
-  precioNeto: "%3434",
-  fecEnt: "11-04-2020",
-  estatus:"activo",
-  
-}];
-
-
-
-var data3 = [{
-  docFactura: "2000107301",
-  fecha: "12-05-2020",
-  impNeto: "$626.68 MXP",
-  Monto: "$626.68 MXP",
-   
-},
-  
+var data2 = [
+  {
+    pos: "1",
+    mat: "310092",
+    Descripcion: "MULTICONECTOR C/VALV-TUERCA UNION INTEG",
+    cant: "0",
+    cantEnt: "500",
+    um: "Pza",
+    monto: "$23232,2323",
+    precioNeto: "%3434",
+    fecEnt: "11-04-2020",
+    estatus: "activo",
+  },
+  {
+    pos: "1",
+    mat: "310092",
+    Descripcion: "MULTICONECTOR C/VALV-TUERCA UNION INTEG",
+    cant: "0",
+    cantEnt: "500",
+    um: "Pza",
+    monto: "$23232,2323",
+    precioNeto: "%3434",
+    fecEnt: "11-04-2020",
+    estatus: "activo",
+  },
+  {
+    pos: "1",
+    mat: "310092",
+    Descripcion: "MULTICONECTOR C/VALV-TUERCA UNION INTEG",
+    cant: "0",
+    cantEnt: "500",
+    um: "Pza",
+    monto: "$23232,2323",
+    precioNeto: "%3434",
+    fecEnt: "11-04-2020",
+    estatus: "activo",
+  },
 ];
 
-
+var data3 = [
+  {
+    docFactura: "2000107301",
+    fecha: "12-05-2020",
+    impNeto: "$626.68 MXP",
+    Monto: "$626.68 MXP",
+  },
+];
 
 var inpescIngreso = [
   {
@@ -180,8 +176,7 @@ $(document).ready(function () {
       }
     },
   });
- 
-  
+
   $("#example3").DataTable({
     paging: true,
     searching: false,
@@ -194,7 +189,6 @@ $(document).ready(function () {
       { data: "fecha", class: "colorLetra" },
       { data: "impNeto", class: "colorLetra" },
       { data: "Monto", class: "colorLetra" },
-     
     ],
     columnDefs: [
       {
@@ -209,36 +203,40 @@ $(document).ready(function () {
         $("td", nRow).css("background-color", "#ffff");
       }
     },
+    initComplete: function (settings, json) {
+      setTimeout(function () {
+        $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+      }, 200);
+    },
   });
 
-
-  $(window).off().on('resize', function () {
-    setTimeout(function () {
-        $($.fn.dataTable.tables(true)).DataTable().columns.adjust().responsive.recalc().draw();
-    }, 100);
-});
+  $(window)
+    .off()
+    .on("resize", function () {
+      setTimeout(function () {
+        $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+      }, 100);
+    });
 
   $("tbody > tr .colorLetra").on("click", function () {
-    
- $("#myModal").modal('toggle');
- 
+    $("#myModal").modal("toggle");
   });
-  
 
-// Select all tabs
-$('.nav-tabs a').click(function(){
-  $(this).tab('show');
-})
- 
-
+  // Select all tabs
+  $(".nav-tabs a").click(function () {
+    debugger;
+    $(this).tab("show");
+    setTimeout(function () {
+      $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+    }, 200);
+  });
 });
-
 
 // funcion timeline
 
-	var completes = document.querySelectorAll(".complete");
+var completes = document.querySelectorAll(".complete");
 
-	function toggleComplete(){
-	  var lastComplete = completes[completes.length - 1];
-	  lastComplete.classList.toggle('complete');
-	}
+function toggleComplete() {
+  var lastComplete = completes[completes.length - 1];
+  lastComplete.classList.toggle("complete");
+}
