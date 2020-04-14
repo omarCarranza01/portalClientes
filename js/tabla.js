@@ -648,7 +648,27 @@ $(document).ready(function () {
         setTimeout(function () {
           $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
         }, 200);
-      }
+      },
+      language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
     });
   }
 
@@ -662,16 +682,16 @@ $(document).ready(function () {
     scrollY: true,
     "scrollX": true,
     columns: [
-      { data: "pos", class: "colorLetra" },
-      { data: "mat", class: "colorLetra" },
-      { data: "Descripcion", class: "colorLetra" },
-      { data: "cant", class: "colorLetra" },
-      { data: "cantEnt", class: "colorLetra" },
-      { data: "um", class: "colorLetra" },
-      { data: "monto", class: "colorLetra" },
-      { data: "precioNeto", class: "colorLetra" },
-      { data: "fecEnt", class: "colorLetra" },
-      { data: "estatus", class: "colorLetra" },
+      { data: "pos", class: "colorLetra1" },
+      { data: "mat", class: "colorLetra1" },
+      { data: "Descripcion", class: "colorLetra1" },
+      { data: "cant", class: "colorLetra1" },
+      { data: "cantEnt", class: "colorLetra1" },
+      { data: "um", class: "colorLetra1" },
+      { data: "monto", class: "colorLetra1" },
+      { data: "precioNeto", class: "colorLetra1" },
+      { data: "fecEnt", class: "colorLetra1" },
+      { data: "estatus", class: "colorLetra1" },
     ],
     columnDefs: [{
       targets: -1,
@@ -683,6 +703,27 @@ $(document).ready(function () {
       } else {
         $("td", nRow).css("background-color", "#ffff");
       }
+    }
+    ,
+      language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
     },
   });
 
@@ -694,10 +735,10 @@ $(document).ready(function () {
     scrollY: true,
     "scrollX": true,
     columns: [
-      { data: "docFactura", class: "colorLetra" },
-      { data: "fecha", class: "colorLetra" },
-      { data: "impNeto", class: "colorLetra" },
-      { data: "Monto", class: "colorLetra" },
+      { data: "docFactura", class: "colorLetra1" },
+      { data: "fecha", class: "colorLetra1" },
+      { data: "impNeto", class: "colorLetra1" },
+      { data: "Monto", class: "colorLetra1" },
     ],
     columnDefs: [{
       targets: -1,
@@ -714,6 +755,27 @@ $(document).ready(function () {
       setTimeout(function () {
         $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
       }, 200);
+    }
+    ,
+      language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
     },
   });
 
