@@ -495,3 +495,7 @@ div.status h4 {
 .modal-xxx {
   max-width: 90% !important;
 }
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 144, 208, 0.3) !important;
+}
