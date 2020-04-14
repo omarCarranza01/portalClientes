@@ -340,7 +340,7 @@ a.disabled.textMenuStyle {
 }
 
 li.active {
-  background-color: #0074b2 !important;
+  background-color: #0074b2;
 }
 
 .loginButtonMenu {
