@@ -40,6 +40,12 @@ body {
   background-color: #ffffff !important;
   padding-top: 6.5rem;
   padding-bottom: 4.3rem;
+  font-size: 11px;
+}
+
+input {
+  font-size: 11px !important;
+  height: 38px !important;
 }
 
 .botonEstilo {
@@ -342,7 +348,6 @@ li.active {
   text-align-last: center;
 }
 
-
 /* estilo timeline-per */
 
 .timeline {
@@ -361,16 +366,16 @@ li.active {
   padding: 0px 15px;
   display: flex;
   justify-content: center;
-  border-top: 2px solid #D6DCE0;
+  border-top: 2px solid #d6dce0;
   position: relative;
   transition: all 200ms ease-in;
 }
 .status h4 {
-	margin-top: 10px;
-	color: #758D96;
-	text-align: center;
-	font-size: 18px;
-	font-weight: bold;
+  margin-top: 10px;
+  color: #758d96;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 .status:before {
   content: "";
@@ -385,16 +390,16 @@ li.active {
 }
 
 .li.complete .status {
-  border-top: 2px solid #00AFD7;
+  border-top: 2px solid #00afd7;
 }
 .li.complete .status:before {
-  background-color: #00AFD7;
+  background-color: #00afd7;
   border: none;
   transition: all 200ms ease-in;
 }
 .li.complete .status h4 {
   font-size: 18px;
-  color: #00AFD7;
+  color: #00afd7;
   position: relative;
   text-align: center;
   font-weight: bold;
@@ -416,4 +421,65 @@ li.active {
     top: 30%;
     transition: all 200ms ease-in;
   }
+}
+
+.select2-selection {
+  overflow: hidden;
+}
+
+.select2-selection__rendered {
+  white-space: normal;
+  word-break: break-all;
+  line-height: 24px !important;
+}
+
+select[readonly].select2-hidden-accessible + .select2-container {
+  pointer-events: none;
+  touch-action: none;
+}
+
+select[readonly].select2-hidden-accessible
+  + .select2-container
+  .select2-selection {
+  background: #eee;
+  box-shadow: none;
+}
+
+select[readonly].select2-hidden-accessible
+  + .select2-container
+  .select2-selection__arrow,
+select[readonly].select2-hidden-accessible
+  + .select2-container
+  .select2-selection__clear {
+  display: none;
+}
+
+.input-validation-error ~ .select2 .select2-selection {
+  border: 1px solid red;
+}
+
+.select2-container--bootstrap .select2-selection {
+  font-size: 11px !important;
+}
+
+.select2-container--bootstrap {
+  min-width: 132px !important;
+}
+
+.select2-search__field {
+  width: 100% !important;
+}
+.select2-container .select2-selection--single {
+  height: 35px !important;
+}
+.select2-selection__arrow {
+  height: 34px !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-right: 0;
+}
+
+div.status h4 {
+  font-size: 11px !important;
 }
