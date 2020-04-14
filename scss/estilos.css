@@ -491,3 +491,7 @@ div.status h4 {
 .pl-0 {
   padding-left: 0 !important;
 }
+
+.modal-xxx {
+  max-width: 90% !important;
+}
