@@ -369,6 +369,10 @@ li.active {
   border-top: 2px solid #d6dce0;
   position: relative;
   transition: all 200ms ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .status h4 {
   margin-top: 10px;
@@ -384,7 +388,7 @@ li.active {
   background-color: white;
   border-radius: 25px;
   border: 1px solid #ddd;
-  position: absolute;
+  position: relative;
   top: -15px;
   transition: all 200ms ease-in;
 }
@@ -407,8 +411,10 @@ li.active {
 
 @media (min-device-width: 320px) and (max-device-width: 700px) {
   .timeline {
+    padding: 0 25px;
     list-style-type: none;
     display: block;
+    position: relative;
   }
 
   .li {
