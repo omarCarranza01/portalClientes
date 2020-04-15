@@ -685,6 +685,7 @@ var dataEstCuenta = [{
 
 $(document).ready(function () {
   var $expampleDT = null;
+  var $tablaEstCuentaDT = null;
   var Graf_Doughnut_demo = null;
 
   var expampleDTFunc = function (data) {
@@ -851,68 +852,70 @@ $(document).ready(function () {
     },
   });
 
-  $("#tablaEstCuenta").DataTable({
-    paging: true,
-    searching: true,
-    lengthChange: false,
-    data: dataEstCuenta,
-    scrollY: true,
-
-    "scrollX": true,
-    columns: [
-      { data: "tipoDocumento", class: "colorLetra1" },
-      { data: "Npedido", class: "colorLetra1" },
-      { data: "ordenDeCompra", class: "colorLetra1" },
-      { data: "factSap", class: "colorLetra1" },
-      { data: "factFiscal", class: "colorLetra1" },
-      { "defaultContent": '<button type="button" class="btn btn-primary btn-xs">XML</button>' },
-      { "defaultContent": '<button type="button" class="btn btn-danger btn-xs">PDF</button>' },
-      { data: "facturaRelac", class: "colorLetra1" },
-      { data: "UUid", class: "colorLetra1" },
-      { data: "fechaFact", class: "colorLetra1" },
-      { data: "vencimiento", class: "colorLetra1" },
-      { data: "diasMora", class: "colorLetra1" },
-      { data: "importe", class: "colorLetra1" },
-      { data: "estatus", class: "colorLetra1" },
-    ],
-    columnDefs: [{
-      targets: -1,
-      className: "dt-body-right",
-    },],
-    fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-      if (iDisplayIndex % 2 == 0) {
-        $("td", nRow).css("background-color", "rgb(0,144,208,.3)");
-      } else {
-        $("td", nRow).css("background-color", "#ffff");
+  var tablaEstCuenta = function(){
+    $tablaEstCuentaDT = $("#tablaEstCuenta").DataTable({
+      paging: true,
+      searching: true,
+      lengthChange: false,
+      data: dataEstCuenta,
+      scrollY: true,
+  
+      "scrollX": true,
+      columns: [
+        { data: "tipoDocumento", class: "colorLetra1" },
+        { data: "Npedido", class: "colorLetra1" },
+        { data: "ordenDeCompra", class: "colorLetra1" },
+        { data: "factSap", class: "colorLetra1" },
+        { data: "factFiscal", class: "colorLetra1" },
+        { "defaultContent": '<button type="button" class="btn btn-primary btn-xs">XML</button>' },
+        { "defaultContent": '<button type="button" class="btn btn-danger btn-xs">PDF</button>' },
+        { data: "facturaRelac", class: "colorLetra1" },
+        { data: "UUid", class: "colorLetra1" },
+        { data: "fechaFact", class: "colorLetra1" },
+        { data: "vencimiento", class: "colorLetra1" },
+        { data: "diasMora", class: "colorLetra1" },
+        { data: "importe", class: "colorLetra1" },
+        { data: "estatus", class: "colorLetra1" },
+      ],
+      columnDefs: [{
+        targets: -1,
+        className: "dt-body-right",
+      },],
+      fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+        if (iDisplayIndex % 2 == 0) {
+          $("td", nRow).css("background-color", "rgb(0,144,208,.3)");
+        } else {
+          $("td", nRow).css("background-color", "#ffff");
+        }
+      },
+      initComplete: function (settings, json) {
+        setTimeout(function () {
+          $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+        }, 200);
       }
-    },
-    initComplete: function (settings, json) {
-      setTimeout(function () {
-        $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
-      }, 200);
-    }
-    ,
-    language: {
-      "decimal": "",
-      "emptyTable": "No hay información",
-      "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-      "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-      "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-      "infoPostFix": "",
-      "thousands": ",",
-      "lengthMenu": "Mostrar _MENU_ Entradas",
-      "loadingRecords": "Cargando...",
-      "processing": "Procesando...",
-      "search": "Buscar:",
-      "zeroRecords": "Sin resultados encontrados",
-      "paginate": {
-        "first": "Primero",
-        "last": "Ultimo",
-        "next": "Siguiente",
-        "previous": "Anterior"
-      }
-    },
-  });
+      ,
+      language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+          "first": "Primero",
+          "last": "Ultimo",
+          "next": "Siguiente",
+          "previous": "Anterior"
+        }
+      },
+    });
+  };
 
   var events = function () {
     $(window).off().on("resize", function () {
@@ -974,6 +977,18 @@ $(document).ready(function () {
       $('.collapse').collapse('hide');
       events();
     });
+
+    $('#setFiltersEstadoCuenta').off().on('click', function(){
+      if($tablaEstCuentaDT){
+        $tablaEstCuentaDT.clear().destroy();
+      }
+
+      $('div.hidden').removeClass('hidden');
+      tablaEstCuenta();
+      $('.collapse').collapse('hide');
+      events();
+      $('.isResizable').matchHeight();
+    });
   };
 
   events();
@@ -1030,8 +1045,6 @@ $(document).ready(function () {
     todayHighlight: true,
     startDate: "01/01/1900",
   });
-
-  $('.isResizable').matchHeight();
 });
 
 var initChartDoughnut = function () {
