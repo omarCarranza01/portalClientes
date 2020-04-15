@@ -517,4 +517,6 @@ div.status h4 {
   background-color: rgba(0, 144, 208, 0.3) !important;
 }
 
-
+.hidden {
+  display: none;
+}
