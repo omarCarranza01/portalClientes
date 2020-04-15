@@ -672,7 +672,7 @@ $(document).ready(function () {
     });
   }
 
-  expampleDTFunc(inpescIngreso);
+  // expampleDTFunc(inpescIngreso);
 
   $("#example2").DataTable({
     paging: true,
@@ -834,7 +834,9 @@ $(document).ready(function () {
         $expampleDT.clear().destroy();
       }
 
+      $('.exampleContent').removeClass('hidden');
       expampleDTFunc(filter);
+      $('.collapse').collapse('hide');
       events();
     });
   };
@@ -893,8 +895,6 @@ $(document).ready(function () {
     todayHighlight: true,
     startDate: "01/01/1900",
   });
-
-
 });
 
 // funcion timeline
