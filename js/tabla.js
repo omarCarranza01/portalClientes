@@ -851,10 +851,11 @@ $(document).ready(function () {
 
   $("#tablaEstCuenta").DataTable({
     paging: true,
-    searching: false,
+    searching: true,
     lengthChange: false,
     data: dataEstCuenta,
     scrollY: true,
+   
     "scrollX": true,
     columns: [
       { data: "tipoDocumento", class: "colorLetra1" },
