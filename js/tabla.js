@@ -559,6 +559,42 @@ var inpescIngreso = [{
   destino: "Con. Suc. Periférico / Tablaje Castral 97210 Merida Sin distrito / colonia",
 },
 {
+  DocComercial: 9040471812,
+  OrdenCompra: 1054023138,
+  monto: "$14,681.00",
+  creado: "02/04/2020",
+  estatus: "Verificar SAC",
+  estatusId: 3,
+  destino: "Con. Suc. Periférico / Tablaje Castral 97210 Merida Sin distrito / colonia",
+},
+{
+  DocComercial: 9040471872,
+  OrdenCompra: 1054023838,
+  monto: "$24,681.00",
+  creado: "01/04/2020",
+  estatus: "Verificar SAC",
+  estatusId: 3,
+  destino: "Con. Suc. Periférico / Tablaje Castral 97210 Merida Sin distrito / colonia",
+},
+{
+  DocComercial: 9040471872,
+  OrdenCompra: 1054023838,
+  monto: "$24,681.00",
+  creado: "01/04/2020",
+  estatus: "Verificar SAC",
+  estatusId: 3,
+  destino: "Con. Suc. Periférico / Tablaje Castral 97210 Merida Sin distrito / colonia",
+},
+{
+  DocComercial: 9140471872,
+  OrdenCompra: 1054023838,
+  monto: "$24,681.00",
+  creado: "02/04/2020",
+  estatus: "Verificar SAC",
+  estatusId: 3,
+  destino: "Con1. Suc. Periférico / Tablaje Castral 97210 Merida Sin distrito / colonia",
+},
+{
   DocComercial: 9008971874,
   OrdenCompra: 10345023858,
   monto: "$20,681.00",
@@ -613,6 +649,39 @@ var inpescIngreso = [{
   destino: "Con. Suc. Periférico / Tablaje Castral 97210 Merida Sin distrito / colonia",
 },
 ];
+
+var dataEstCuenta = [{
+  tipoDocumento:"Nota de Credito",
+  Npedido: "0410040814",
+  ordenDeCompra: "507228",
+  factSap: "3100041617",
+  factFiscal: "8A36FE79-E5A2-40C1-A31C-6E0B9FC7F3A7",
+  xml: "",
+  pdf: "",
+  facturaRelac:"1100537766",
+  UUid:"C8368D94-6021-494E-A44E-B308F5BFFE03",
+  fechaFact: "11/02/2020",
+  vencimiento:"11/02/2020",
+  diasMora: "3",
+  importe: "$2500",
+  estatus:"VENCIDO"
+},{
+tipoDocumento:"Factura",
+Npedido: "0000598133",
+ordenDeCompra: "507175",
+factSap: "1100529741",
+factFiscal: "CAFDDCF0-792B-4803-A417-372A891F451F	",
+xml: "",
+pdf: "",
+facturaRelac:"90187898",
+UUid:"C8368D94-6021-494E-A44E-B308F5BF2FE03",
+fechaFact: "12/02/2020",
+vencimiento:"13/02/2020",
+diasMora: "13",
+importe: "$22,500",
+estatus:"A VENCER"
+}
+]
 
 $(document).ready(function () {
   var $expampleDT = null;
@@ -727,6 +796,7 @@ $(document).ready(function () {
     },
   });
 
+
   $("#example3").DataTable({
     paging: true,
     searching: false,
@@ -739,6 +809,68 @@ $(document).ready(function () {
       { data: "fecha", class: "colorLetra1" },
       { data: "impNeto", class: "colorLetra1" },
       { data: "Monto", class: "colorLetra1" },
+    ],
+    columnDefs: [{
+      targets: -1,
+      className: "dt-body-right",
+    },],
+    fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+      if (iDisplayIndex % 2 == 0) {
+        $("td", nRow).css("background-color", "rgb(0,144,208,.3)");
+      } else {
+        $("td", nRow).css("background-color", "#ffff");
+      }
+    },
+    initComplete: function (settings, json) {
+      setTimeout(function () {
+        $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+      }, 200);
+    }
+    ,
+      language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+  });
+
+  $("#tablaEstCuenta").DataTable({
+    paging: true,
+    searching: false,
+    lengthChange: false,
+    data: dataEstCuenta,
+    scrollY: true,
+    "scrollX": true,
+    columns: [
+      { data: "tipoDocumento", class: "colorLetra1" },
+      { data: "Npedido", class: "colorLetra1" },
+      { data: "ordenDeCompra", class: "colorLetra1" },
+      { data: "factSap", class: "colorLetra1" },
+      { data: "factFiscal", class: "colorLetra1" },
+      {"defaultContent": '<button type="button" class="btn btn-primary btn-xs">XML</button>'},
+      {"defaultContent": '<button type="button" class="btn btn-primary btn-xs">PDF</button>'},
+      { data: "facturaRelac", class: "colorLetra1" },
+      { data: "UUid", class: "colorLetra1" },
+      { data: "fechaFact", class: "colorLetra1" },
+      { data: "vencimiento", class: "colorLetra1" },
+      { data: "diasMora", class: "colorLetra1" },
+      { data: "importe", class: "colorLetra1" },
+      { data: "estatus", class: "colorLetra1" },
     ],
     columnDefs: [{
       targets: -1,
