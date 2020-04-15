@@ -651,35 +651,35 @@ var inpescIngreso = [{
 ];
 
 var dataEstCuenta = [{
-  tipoDocumento:"Nota de Credito",
+  tipoDocumento: "Nota de Credito",
   Npedido: "0410040814",
   ordenDeCompra: "507228",
   factSap: "3100041617",
   factFiscal: "8A36FE79-E5A2-40C1-A31C-6E0B9FC7F3A7",
   xml: "",
   pdf: "",
-  facturaRelac:"1100537766",
-  UUid:"C8368D94-6021-494E-A44E-B308F5BFFE03",
+  facturaRelac: "1100537766",
+  UUid: "C8368D94-6021-494E-A44E-B308F5BFFE03",
   fechaFact: "11/02/2020",
-  vencimiento:"11/02/2020",
+  vencimiento: "11/02/2020",
   diasMora: "3",
   importe: "$2500",
-  estatus:"VENCIDO"
-},{
-tipoDocumento:"Factura",
-Npedido: "0000598133",
-ordenDeCompra: "507175",
-factSap: "1100529741",
-factFiscal: "CAFDDCF0-792B-4803-A417-372A891F451F	",
-xml: "",
-pdf: "",
-facturaRelac:"90187898",
-UUid:"C8368D94-6021-494E-A44E-B308F5BF2FE03",
-fechaFact: "12/02/2020",
-vencimiento:"13/02/2020",
-diasMora: "13",
-importe: "$22,500",
-estatus:"A VENCER"
+  estatus: "VENCIDO"
+}, {
+  tipoDocumento: "Factura",
+  Npedido: "0000598133",
+  ordenDeCompra: "507175",
+  factSap: "1100529741",
+  factFiscal: "CAFDDCF0-792B-4803-A417-372A891F451F	",
+  xml: "",
+  pdf: "",
+  facturaRelac: "90187898",
+  UUid: "C8368D94-6021-494E-A44E-B308F5BF2FE03",
+  fechaFact: "12/02/2020",
+  vencimiento: "13/02/2020",
+  diasMora: "13",
+  importe: "$22,500",
+  estatus: "A VENCER"
 }
 ]
 
@@ -708,7 +708,7 @@ $(document).ready(function () {
       },],
       fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
         if (iDisplayIndex % 2 == 0) {
-          $("td", nRow).css({'background-color': "rgb(0, 144, 208, 0.3)" });
+          $("td", nRow).css({ 'background-color': "rgb(0, 144, 208, 0.3)" });
         } else {
           $("td", nRow).css("background-color", "#ffff");
         }
@@ -732,12 +732,12 @@ $(document).ready(function () {
         "search": "Buscar:",
         "zeroRecords": "Sin resultados encontrados",
         "paginate": {
-            "first": "Primero",
-            "last": "Ultimo",
-            "next": "Siguiente",
-            "previous": "Anterior"
+          "first": "Primero",
+          "last": "Ultimo",
+          "next": "Siguiente",
+          "previous": "Anterior"
         }
-    },
+      },
     });
   }
 
@@ -774,25 +774,25 @@ $(document).ready(function () {
       }
     }
     ,
-      language: {
-        "decimal": "",
-        "emptyTable": "No hay información",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-        "infoPostFix": "",
-        "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ Entradas",
-        "loadingRecords": "Cargando...",
-        "processing": "Procesando...",
-        "search": "Buscar:",
-        "zeroRecords": "Sin resultados encontrados",
-        "paginate": {
-            "first": "Primero",
-            "last": "Ultimo",
-            "next": "Siguiente",
-            "previous": "Anterior"
-        }
+    language: {
+      "decimal": "",
+      "emptyTable": "No hay información",
+      "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+      "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+      "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+      "infoPostFix": "",
+      "thousands": ",",
+      "lengthMenu": "Mostrar _MENU_ Entradas",
+      "loadingRecords": "Cargando...",
+      "processing": "Procesando...",
+      "search": "Buscar:",
+      "zeroRecords": "Sin resultados encontrados",
+      "paginate": {
+        "first": "Primero",
+        "last": "Ultimo",
+        "next": "Siguiente",
+        "previous": "Anterior"
+      }
     },
   });
 
@@ -827,25 +827,25 @@ $(document).ready(function () {
       }, 200);
     }
     ,
-      language: {
-        "decimal": "",
-        "emptyTable": "No hay información",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-        "infoPostFix": "",
-        "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ Entradas",
-        "loadingRecords": "Cargando...",
-        "processing": "Procesando...",
-        "search": "Buscar:",
-        "zeroRecords": "Sin resultados encontrados",
-        "paginate": {
-            "first": "Primero",
-            "last": "Ultimo",
-            "next": "Siguiente",
-            "previous": "Anterior"
-        }
+    language: {
+      "decimal": "",
+      "emptyTable": "No hay información",
+      "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+      "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+      "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+      "infoPostFix": "",
+      "thousands": ",",
+      "lengthMenu": "Mostrar _MENU_ Entradas",
+      "loadingRecords": "Cargando...",
+      "processing": "Procesando...",
+      "search": "Buscar:",
+      "zeroRecords": "Sin resultados encontrados",
+      "paginate": {
+        "first": "Primero",
+        "last": "Ultimo",
+        "next": "Siguiente",
+        "previous": "Anterior"
+      }
     },
   });
 
@@ -855,7 +855,7 @@ $(document).ready(function () {
     lengthChange: false,
     data: dataEstCuenta,
     scrollY: true,
-   
+
     "scrollX": true,
     columns: [
       { data: "tipoDocumento", class: "colorLetra1" },
@@ -863,8 +863,8 @@ $(document).ready(function () {
       { data: "ordenDeCompra", class: "colorLetra1" },
       { data: "factSap", class: "colorLetra1" },
       { data: "factFiscal", class: "colorLetra1" },
-      {"defaultContent": '<button type="button" class="btn btn-primary btn-xs">XML</button>'},
-      {"defaultContent": '<button type="button" class="btn btn-danger btn-xs">PDF</button>'},
+      { "defaultContent": '<button type="button" class="btn btn-primary btn-xs">XML</button>' },
+      { "defaultContent": '<button type="button" class="btn btn-danger btn-xs">PDF</button>' },
       { data: "facturaRelac", class: "colorLetra1" },
       { data: "UUid", class: "colorLetra1" },
       { data: "fechaFact", class: "colorLetra1" },
@@ -890,25 +890,25 @@ $(document).ready(function () {
       }, 200);
     }
     ,
-      language: {
-        "decimal": "",
-        "emptyTable": "No hay información",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-        "infoPostFix": "",
-        "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ Entradas",
-        "loadingRecords": "Cargando...",
-        "processing": "Procesando...",
-        "search": "Buscar:",
-        "zeroRecords": "Sin resultados encontrados",
-        "paginate": {
-            "first": "Primero",
-            "last": "Ultimo",
-            "next": "Siguiente",
-            "previous": "Anterior"
-        }
+    language: {
+      "decimal": "",
+      "emptyTable": "No hay información",
+      "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+      "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+      "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+      "infoPostFix": "",
+      "thousands": ",",
+      "lengthMenu": "Mostrar _MENU_ Entradas",
+      "loadingRecords": "Cargando...",
+      "processing": "Procesando...",
+      "search": "Buscar:",
+      "zeroRecords": "Sin resultados encontrados",
+      "paginate": {
+        "first": "Primero",
+        "last": "Ultimo",
+        "next": "Siguiente",
+        "previous": "Anterior"
+      }
     },
   });
 
@@ -927,7 +927,7 @@ $(document).ready(function () {
     $(".nav-tabs a").off().on('click', function () {
       debugger;
       $(this).tab("show");
-     // $('div.modal-body').animate({ scrollTop: 0 }, "slow");
+      // $('div.modal-body').animate({ scrollTop: 0 }, "slow");
       setTimeout(function () {
         $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
       }, 200);
@@ -1028,7 +1028,124 @@ $(document).ready(function () {
     todayHighlight: true,
     startDate: "01/01/1900",
   });
+
 });
+
+var initChartDoughnut = function () {
+  debugger
+  var dta = {
+    labels: ["dato1", "dato2", "dato3"],
+    data: [
+      125, 354, 487
+    ],
+    total: 966
+  },
+    ctx = document.getElementById('chart_puertos_origen'),
+    model = charts.doughnut.models.modelDoughnut();
+
+  model = {
+    type: {},
+    data: {
+      datasets: [],
+      labels: dta.labels,
+      freeData: dta
+    },
+    plugins: null,
+    options: {}
+  };
+
+  for (var i = 0; i < dta.data.length; i++) {
+    var dataModel = charts.doughnut.models.dataset();
+    dataModel = {
+      label: 'DEMO',
+      labels: dta.labels,
+      data: dta.data[i],
+      backgroundColor: [],
+      hoverBackgroundColor: []
+    };
+    charts.util.doughnut.setColorsToDataModel(dataModel, dta.data[i].length, false, false, 1);
+    model.data.datasets.push(dataModel);
+  }
+
+  model.options = {
+    title: {
+      display: true,
+      text: 'DEMO'
+    },
+    elements: {
+      center: {
+        text: ''//'100.00%'
+      }
+    },
+    layout: {
+      padding: {
+        right: 50,
+        left: 50
+      }
+    },
+    plugins: {
+      labels: [
+        {
+          render: function (args) {
+            //return args.label + '_' + args.percentage + '%';
+            return args.percentage + '%';
+          },
+          fontColor: '#000',
+          fontSize: 9,
+          position: 'outside',
+          precision: 2,
+          arc: false
+        },
+        {
+          render: 'label',
+          position: 'default',
+          fontSize: 8,
+          arc: false
+        }
+      ],
+      datalabels: false
+    },
+    legend: {
+      position: 'right',
+      display: displayLegendStatus || true,
+      onClick: function (legendItem, data) {
+        var arc = this.chart.getDatasetMeta(0).data[data.index];
+        arc.hidden = !arc.hidden ? true : false;
+
+        var freedata = arc._chart.data.freeData;
+        var find = freedata.modelPuertoOrigen.find(function (e, i) { return e.key === data.text; });
+        find.status = arc.hidden;
+
+        var filterFalses = freedata.modelPuertoOrigen.filter(function (a, e) { return a.status === false; });
+        var recalculateTotal = filterFalses.reduce(function (a, e, i) { return a + e.total; }, 0);
+        var recalculatePercentage = (recalculateTotal / freedata.total) * 100;
+        //this.chart.options.elements.center.text = recalculatePercentage.toFixed(2) + '%';
+        this.chart.update();
+      }
+    },
+    tooltips: {
+      callbacks: {
+        label: function (tooltipItem, data) {
+          var dataset = data.datasets[tooltipItem.datasetIndex];
+          var index = tooltipItem.index;
+          return ['PUERTO ORIGEN: ' + dataset.labels[index], 'CANTIDAD EMBARQUES: ' + dataset.data[index]];
+        }
+      }
+    },
+    onClick: function (evt, a) {
+      var currentClick = Graf_Doughnut_Puertos_Origen.getElementAtEvent(evt)[0];
+      if (currentClick) {
+        var label = Graf_Doughnut_Puertos_Origen.data.labels[currentClick._index],
+          value = Graf_Doughnut_Puertos_Origen.data.datasets[currentClick._datasetIndex].data[currentClick._index],
+          getRemaining = Graf_Doughnut_Puertos_Origen.data.freeData.modelPuertoOrigen.find(function (e, a) { return e.key === label && e.total === value; });
+        initDataTable(label, value, getRemaining);
+      }
+    }
+  };
+
+  var generate = new charts.doughnut.constructor(model).set();
+  var grapht = new Chart(ctx, generate);
+};
 
 // funcion timeline
 
