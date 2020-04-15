@@ -1,9 +1,7 @@
 @font-face {
   font-family: "Rotoplas-Bold-Web";
   src: url("../fonts/Rotoplas-Regular-Web.ttf");
-   
 }
-
 
 .FondoAzulOscuro {
   background-color: #002554 !important;
@@ -519,4 +517,19 @@ div.status h4 {
 
 .hidden {
   display: none;
+}
+
+.chart-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.isResizable {
+  padding: 5px;
+  overflow: hidden;
+}
+
+.h-100-percent {
+  height: 100% !important;
 }

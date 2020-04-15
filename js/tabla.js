@@ -685,6 +685,8 @@ var dataEstCuenta = [{
 
 $(document).ready(function () {
   var $expampleDT = null;
+  var Graf_Doughnut_demo = null;
+
   var expampleDTFunc = function (data) {
     $expampleDT = $("#example").DataTable({
       paging: true,
@@ -1029,16 +1031,51 @@ $(document).ready(function () {
     startDate: "01/01/1900",
   });
 
+  $('.isResizable').matchHeight();
 });
 
 var initChartDoughnut = function () {
-  debugger
+  var model = [
+    {
+      name: 'Dato1',
+      value: '125'
+    },
+    {
+      name: 'Dato2',
+      value: '125'
+    },
+    {
+      name: 'Dato3',
+      value: '125'
+    },
+    {
+      name: 'Dato3',
+      value: '568'
+    }
+  ];
+
+  var group = _.groupBy(model, function (a, e) { return a.name; });
+  var keys = Object.keys(group);
+  var modelDemo = [];
+
+  for (var a = 0; a < keys.length; a++) {
+    var current = group[keys[a]];
+    modelDemo.push({
+      key: keys[a],
+      total: current.length,
+      status: false,
+      remaining: current
+    });
+  }
+
+
   var dta = {
-    labels: ["dato1", "dato2", "dato3"],
+    labels: keys,
     data: [
-      125, 354, 487
+      _.map(modelDemo, function (a, e) { return a.total; })
     ],
-    total: 966
+    total: modelDemo.reduce(function (a, e, i) { return a + e.total; }, 0),
+    modelDemo: modelDemo
   },
     ctx = document.getElementById('chart_puertos_origen'),
     model = charts.doughnut.models.modelDoughnut();
@@ -1107,16 +1144,16 @@ var initChartDoughnut = function () {
     },
     legend: {
       position: 'right',
-      display: displayLegendStatus || true,
+      display: true,
       onClick: function (legendItem, data) {
         var arc = this.chart.getDatasetMeta(0).data[data.index];
         arc.hidden = !arc.hidden ? true : false;
 
         var freedata = arc._chart.data.freeData;
-        var find = freedata.modelPuertoOrigen.find(function (e, i) { return e.key === data.text; });
+        var find = freedata.modelDemo.find(function (e, i) { return e.key === data.text; });
         find.status = arc.hidden;
 
-        var filterFalses = freedata.modelPuertoOrigen.filter(function (a, e) { return a.status === false; });
+        var filterFalses = freedata.modelDemo.filter(function (a, e) { return a.status === false; });
         var recalculateTotal = filterFalses.reduce(function (a, e, i) { return a + e.total; }, 0);
         var recalculatePercentage = (recalculateTotal / freedata.total) * 100;
         //this.chart.options.elements.center.text = recalculatePercentage.toFixed(2) + '%';
@@ -1128,23 +1165,23 @@ var initChartDoughnut = function () {
         label: function (tooltipItem, data) {
           var dataset = data.datasets[tooltipItem.datasetIndex];
           var index = tooltipItem.index;
-          return ['PUERTO ORIGEN: ' + dataset.labels[index], 'CANTIDAD EMBARQUES: ' + dataset.data[index]];
+          return ['Nombre: ' + dataset.labels[index], 'Valor: ' + dataset.data[index]];
         }
       }
     },
     onClick: function (evt, a) {
-      var currentClick = Graf_Doughnut_Puertos_Origen.getElementAtEvent(evt)[0];
+      var currentClick = Graf_Doughnut_demo.getElementAtEvent(evt)[0];
       if (currentClick) {
-        var label = Graf_Doughnut_Puertos_Origen.data.labels[currentClick._index],
-          value = Graf_Doughnut_Puertos_Origen.data.datasets[currentClick._datasetIndex].data[currentClick._index],
-          getRemaining = Graf_Doughnut_Puertos_Origen.data.freeData.modelPuertoOrigen.find(function (e, a) { return e.key === label && e.total === value; });
-        initDataTable(label, value, getRemaining);
+        var label = Graf_Doughnut_demo.data.labels[currentClick._index],
+          value = Graf_Doughnut_demo.data.datasets[currentClick._datasetIndex].data[currentClick._index],
+          getRemaining = Graf_Doughnut_demo.data.freeData.modelDemo.find(function (e, a) { return e.key === label && e.total === value; });
+        // initDataTable(label, value, getRemaining);
       }
     }
   };
 
   var generate = new charts.doughnut.constructor(model).set();
-  var grapht = new Chart(ctx, generate);
+  Graf_Doughnut_demo = new Chart(ctx, generate);
 };
 
 // funcion timeline
