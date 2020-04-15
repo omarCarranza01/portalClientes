@@ -863,7 +863,7 @@ $(document).ready(function () {
       { data: "factSap", class: "colorLetra1" },
       { data: "factFiscal", class: "colorLetra1" },
       {"defaultContent": '<button type="button" class="btn btn-primary btn-xs">XML</button>'},
-      {"defaultContent": '<button type="button" class="btn btn-primary btn-xs">PDF</button>'},
+      {"defaultContent": '<button type="button" class="btn btn-danger btn-xs">PDF</button>'},
       { data: "facturaRelac", class: "colorLetra1" },
       { data: "UUid", class: "colorLetra1" },
       { data: "fechaFact", class: "colorLetra1" },
