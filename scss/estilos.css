@@ -47,11 +47,16 @@ body {
   padding-top: 6.5rem;
   padding-bottom: 4.3rem;
   font-size: 11px;
+  height: 100vh !important;
 }
 
 input {
   font-size: 11px !important;
   height: 38px !important;
+}
+
+#wrapper {
+  height: 100% !important;
 }
 
 .botonEstilo {
