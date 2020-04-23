@@ -47,7 +47,7 @@ body {
   padding-top: 6.5rem;
   padding-bottom: 4.3rem;
   font-size: 11px;
-  height: 100vh !important;
+  /* height: 100vh !important; */
 }
 
 input {
@@ -111,6 +111,9 @@ input {
 .flex {
   display: flex;
   align-items: center;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
 }
 
 .fillWidthAvaible {
@@ -537,4 +540,15 @@ div.status h4 {
 
 .h-100-percent {
   height: 100% !important;
+}
+
+.w-100-percent{
+  width: 100% !important;
+}
+
+.card {
+  display: flex;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
 }
