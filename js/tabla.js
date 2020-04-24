@@ -941,7 +941,6 @@ $(document).ready(function () {
 
     $("tbody > tr .colorLetra").off().on("click", function () {
       $("#myModal").modal("toggle");
-      debugger
       if ($example2) {
         $example2.clear().destroy();
       }
