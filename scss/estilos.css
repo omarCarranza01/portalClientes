@@ -55,9 +55,9 @@ input {
   height: 38px !important;
 }
 
-#wrapper {
+/* #wrapper {
   height: 100% !important;
-}
+} */
 
 .botonEstilo {
   color: #fff;
@@ -542,7 +542,7 @@ div.status h4 {
   height: 100% !important;
 }
 
-.w-100-percent{
+.w-100-percent {
   width: 100% !important;
 }
 
@@ -551,4 +551,26 @@ div.status h4 {
   -ms-flex: 1;
   -webkit-flex: 1;
   flex: 1;
+}
+
+#wrapper #content-wrapper {
+  height: 100% !important;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
 }
