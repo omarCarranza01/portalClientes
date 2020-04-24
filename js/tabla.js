@@ -936,7 +936,6 @@ $(document).ready(function () {
 
     // Select all tabs
     $(".nav-tabs a").off().on('click', function () {
-      debugger;
       $(this).tab("show");
       // $('div.modal-body').animate({ scrollTop: 0 }, "slow");
       setTimeout(function () {
