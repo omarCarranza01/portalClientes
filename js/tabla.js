@@ -688,6 +688,12 @@ $(document).ready(function () {
   var $tablaEstCuentaDT = null;
   var Graf_Doughnut_demo = null;
 
+  var isIE = window.ActiveXObject || "ActiveXObject" in window;
+    if (isIE) {
+        $('.modal').removeClass('fade');
+        $('.tab-pane.fade').removeClass('fade');
+    }
+
   var expampleDTFunc = function (data) {
     $expampleDT = $("#example").DataTable({
       paging: true,
