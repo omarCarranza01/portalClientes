@@ -685,14 +685,16 @@ var dataEstCuenta = [{
 
 $(document).ready(function () {
   var $expampleDT = null;
+  var $example2 = null;
+  var $example3 = null;
   var $tablaEstCuentaDT = null;
   var Graf_Doughnut_demo = null;
 
   var isIE = window.ActiveXObject || "ActiveXObject" in window;
-    if (isIE) {
-        $('.modal').removeClass('fade');
-        $('.tab-pane.fade').removeClass('fade');
-    }
+  if (isIE) {
+    $('.modal').removeClass('fade');
+    $('.tab-pane.fade').removeClass('fade');
+  }
 
   var expampleDTFunc = function (data) {
     $expampleDT = $("#example").DataTable({
@@ -752,120 +754,127 @@ $(document).ready(function () {
 
   // expampleDTFunc(inpescIngreso);
 
-  $("#example2").DataTable({
-    paging: true,
-    searching: false,
-    lengthChange: false,
-    data: data2,
-    scrollY: true,
-    "scrollX": true,
-    columns: [
-      { data: "pos", class: "colorLetra1" },
-      { data: "mat", class: "colorLetra1" },
-      { data: "Descripcion", class: "colorLetra1" },
-      { data: "cant", class: "colorLetra1" },
-      { data: "cantEnt", class: "colorLetra1" },
-      { data: "um", class: "colorLetra1" },
-      { data: "monto", class: "colorLetra1" },
-      { data: "precioNeto", class: "colorLetra1" },
-      { data: "fecEnt", class: "colorLetra1" },
-      { data: "estatus", class: "colorLetra1" },
-    ],
-    columnDefs: [{
-      targets: -1,
-      className: "dt-body-right",
-    },],
-    fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-      if (iDisplayIndex % 2 == 0) {
-        $("td", nRow).css("background-color", "rgb(0,144,208,.3)");
-      } else {
-        $("td", nRow).css("background-color", "#ffff");
-      }
-    }
-    ,
-    language: {
-      "decimal": "",
-      "emptyTable": "No hay información",
-      "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-      "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-      "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-      "infoPostFix": "",
-      "thousands": ",",
-      "lengthMenu": "Mostrar _MENU_ Entradas",
-      "loadingRecords": "Cargando...",
-      "processing": "Procesando...",
-      "search": "Buscar:",
-      "zeroRecords": "Sin resultados encontrados",
-      "paginate": {
-        "first": "Primero",
-        "last": "Ultimo",
-        "next": "Siguiente",
-        "previous": "Anterior"
-      }
-    },
-  });
+  var example2Func = function (data) {
+    $example2 = $("#example2").DataTable({
+      paging: true,
+      searching: false,
+      lengthChange: false,
+      data: data,
+      scrollY: true,
+      "scrollX": true,
+      columns: [
+        { data: "pos", class: "colorLetra1" },
+        { data: "mat", class: "colorLetra1" },
+        { data: "Descripcion", class: "colorLetra1" },
+        { data: "cant", class: "colorLetra1" },
+        { data: "cantEnt", class: "colorLetra1" },
+        { data: "um", class: "colorLetra1" },
+        { data: "monto", class: "colorLetra1" },
+        { data: "precioNeto", class: "colorLetra1" },
+        { data: "fecEnt", class: "colorLetra1" },
+        { data: "estatus", class: "colorLetra1" },
+      ],
+      columnDefs: [{
+        targets: -1,
+        className: "dt-body-right",
+      },],
+      fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+        if (iDisplayIndex % 2 == 0) {
+          $("td", nRow).css("background-color", "rgb(0,144,208,.3)");
+        } else {
+          $("td", nRow).css("background-color", "#ffff");
+        }
+      },
+      initComplete: function (settings, json) {
+        setTimeout(function () {
+          $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+        }, 200);
+      },
+      language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+          "first": "Primero",
+          "last": "Ultimo",
+          "next": "Siguiente",
+          "previous": "Anterior"
+        }
+      },
+    });
+  }
 
 
-  $("#example3").DataTable({
-    paging: true,
-    searching: false,
-    lengthChange: false,
-    data: data3,
-    scrollY: true,
-    "scrollX": true,
-    columns: [
-      { data: "docFactura", class: "colorLetra1" },
-      { data: "fecha", class: "colorLetra1" },
-      { data: "impNeto", class: "colorLetra1" },
-      { data: "Monto", class: "colorLetra1" },
-    ],
-    columnDefs: [{
-      targets: -1,
-      className: "dt-body-right",
-    },],
-    fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-      if (iDisplayIndex % 2 == 0) {
-        $("td", nRow).css("background-color", "rgb(0,144,208,.3)");
-      } else {
-        $("td", nRow).css("background-color", "#ffff");
-      }
-    },
-    initComplete: function (settings, json) {
-      setTimeout(function () {
-        $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
-      }, 200);
-    }
-    ,
-    language: {
-      "decimal": "",
-      "emptyTable": "No hay información",
-      "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-      "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-      "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-      "infoPostFix": "",
-      "thousands": ",",
-      "lengthMenu": "Mostrar _MENU_ Entradas",
-      "loadingRecords": "Cargando...",
-      "processing": "Procesando...",
-      "search": "Buscar:",
-      "zeroRecords": "Sin resultados encontrados",
-      "paginate": {
-        "first": "Primero",
-        "last": "Ultimo",
-        "next": "Siguiente",
-        "previous": "Anterior"
-      }
-    },
-  });
+  var example3Func = function (data) {
+    $example3 = $("#example3").DataTable({
+      paging: true,
+      searching: false,
+      lengthChange: false,
+      data: data,
+      scrollY: true,
+      "scrollX": true,
+      columns: [
+        { data: "docFactura", class: "colorLetra1" },
+        { data: "fecha", class: "colorLetra1" },
+        { data: "impNeto", class: "colorLetra1" },
+        { data: "Monto", class: "colorLetra1" },
+      ],
+      columnDefs: [{
+        targets: -1,
+        className: "dt-body-right",
+      },],
+      fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+        if (iDisplayIndex % 2 == 0) {
+          $("td", nRow).css("background-color", "rgb(0,144,208,.3)");
+        } else {
+          $("td", nRow).css("background-color", "#ffff");
+        }
+      },
+      initComplete: function (settings, json) {
+        setTimeout(function () {
+          $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+        }, 200);
+      },
+      language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+          "first": "Primero",
+          "last": "Ultimo",
+          "next": "Siguiente",
+          "previous": "Anterior"
+        }
+      },
+    });
+  }
 
-  var tablaEstCuenta = function(){
+  var tablaEstCuenta = function () {
     $tablaEstCuentaDT = $("#tablaEstCuenta").DataTable({
       paging: true,
       searching: true,
       lengthChange: false,
       data: dataEstCuenta,
       scrollY: true,
-  
+
       "scrollX": true,
       columns: [
         { data: "tipoDocumento", class: "colorLetra1" },
@@ -932,6 +941,8 @@ $(document).ready(function () {
 
     $("tbody > tr .colorLetra").off().on("click", function () {
       $("#myModal").modal("toggle");
+      example2Func(data2);
+      example3Func(data3);
     });
 
     // Select all tabs
@@ -983,8 +994,8 @@ $(document).ready(function () {
       events();
     });
 
-    $('#setFiltersEstadoCuenta').off().on('click', function(){
-      if($tablaEstCuentaDT){
+    $('#setFiltersEstadoCuenta').off().on('click', function () {
+      if ($tablaEstCuentaDT) {
         $tablaEstCuentaDT.clear().destroy();
       }
 
