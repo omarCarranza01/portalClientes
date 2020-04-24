@@ -941,6 +941,13 @@ $(document).ready(function () {
 
     $("tbody > tr .colorLetra").off().on("click", function () {
       $("#myModal").modal("toggle");
+      debugger
+      if ($example2) {
+        $example2.clear().destroy();
+      }
+      if ($example3) {
+        $example3.clear().destroy();
+      }
       example2Func(data2);
       example3Func(data3);
     });
