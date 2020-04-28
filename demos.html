@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>Columna 1</th>
+                            <th>Columna 2</th>
+                            <th>Columna 3</th>
+                            <th>Columna 4</th>
+                        </tr>
+                    </thead>
+                    <tbody id="demoTarget"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+        <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/Mustache/mustache.min.js"></script>
+
+    <script id="demoTemplate" type="x-tmpl-mustache">
+        {{#list}}
+        <tr>
+            <td>{{dato1}}</td>
+            <td>{{dato2}}</td>
+            <td>{{dato3}}</td>
+            {{#dato4}}
+            <td>{{.}}</td>
+            {{/dato4}}
+            {{^dato4}}
+            <td>No Existe</td>
+            {{/dato4}}
+        </tr>
+        {{/list}}
+    </script>
+    <script>
+        $(document).ready(function () {
+            debugger
+            /**
+             * Renderiza y carga el template de mustache
+             * @param {any} mustacheTemplateId el id donde se encuentra el template de mustache
+             * @param {any} mustacheTemplateTargetId el id donde se cargara el template renderizado
+             * @param {any} data la informacion que se usara para renderizar el template
+             */
+            function loadMustacheTemplate(mustacheTemplateId, mustacheTemplateTargetId, data) {
+                var mustacheTemplate = $('#' + mustacheTemplateId).html();
+
+                Mustache.parse(mustacheTemplate); // optional, speeds up future uses
+
+                var rendered = Mustache.render(mustacheTemplate, data);
+
+                $('#' + mustacheTemplateTargetId).html(rendered);
+            }
+
+            function renderMustacheTemplate(mustacheTemplateId, data) {
+                var mustacheTemplate = $('#' + mustacheTemplateId).html();
+
+                Mustache.parse(mustacheTemplate); // optional, speeds up future uses
+
+                return Mustache.render(mustacheTemplate, data);
+            }
+
+            var model = [
+                {
+                    dato1: 'mi Dato 1',
+                    dato2: 'mi Dato 2',
+                    dato3: 'mi Dato 3',
+                    dato4: 'mi Dato 4',
+                },
+                {
+                    dato1: 'mi Dato 5',
+                    dato2: 'mi Dato 6',
+                    dato3: 'mi Dato 7',
+                },
+                {
+                    dato1: 'mi Dato 9',
+                    dato2: 'mi Dato 10',
+                    dato3: 'mi Dato 11',
+                    dato4: 'mi Dato 12',
+                },
+                {
+                    dato1: 'mi Dato 13',
+                    dato2: 'mi Dato 14',
+                    dato3: 'mi Dato 15',
+                }
+            ];
+            debugger
+            loadMustacheTemplate('demoTemplate', 'demoTarget', {list: model});
+        });
+    </script>
+    
+</body>
+
+</html>
