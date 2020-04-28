@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $('.isResizable').matchHeight();
+
 
     $('#headingTwo').prop('disabled',true);
     $('#headingThree').prop('disabled',true);
