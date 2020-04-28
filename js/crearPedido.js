@@ -14,5 +14,6 @@ $(document).ready(function() {
     $("#btnContinuarColp2").on("click", function(){
         $('#headingThree').prop('disabled',false);
         $('#headingThree').click();
+        $('.isResizable').matchHeight();
     });
 });
