@@ -1,9 +1,16 @@
 $(document).ready(function() {
 
-    $('.collapse').collapse('hide');
+    $('#headingTwo').prop('disabled',true);
+    $('#headingThree').prop('disabled',true);
+  
 
-    $("#item1Header2").on("click", function() {
-        $('.collapse').collapse('hide');
-        $(this + ' .collapse').collapse('show');
+    $("#btnContinuarColp1").on("click", function(){
+        $('#headingTwo').prop('disabled',false);
+        $('#headingTwo').click();
+    });
+
+    $("#btnContinuarColp2").on("click", function(){
+        $('#headingThree').prop('disabled',false);
+        $('#headingThree').click();
     });
 });

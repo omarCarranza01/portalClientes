@@ -55,179 +55,125 @@
 
         <div class="container ">
 
-            <div class="row">
-                <div class="col-lg-3 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-3">
-                                    <div class="text-md font-weight-bold text-primary text-uppercase mb-1">Documento Comercial
+            <div id="accordion">
+                <div class="card">
+                    <div  class="card-header"  id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <h5 class="mb-0">Crear Pedidos</h5>
+                    </div>
+
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="" class="">Seleccione Dirección de Entrega</label>        
+                            </div>
+                           
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="form-group flex">
+                               
+                                <select class="form-control dropdownActive" id="select_estatus" name="select_estatus">
+        <option value="0"></option>
+        <option value="1">SUC. Tecnica Tectonica Aplicada/Av. Adolfo Lopez Mateos 18 Col el Toreo</option>
+        <option value="2">Fis. Todo Gas Plomeria / Universidad 3214 Col Centro</option>
+        <option value="3">Agr. Polimar Narvarte/ Carr. a San benito 902 Col El Barrial</option>
+        <option value="4">Ind. Total Home/ Miguel de la Madrid 7643 Col Unidad Modelo</option>
+      </select>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <button id="btnContinuarColp1" class="btn btn-primary float-right" role="button" name="setFilters">Continuar </button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  
+                    <div  class="card-header"  id="headingTwo" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <h5 class="mb-0">Seleccón de Pedido</h5>
+                    </div>
+
+
+
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <label for="" class="">No. Pedido Cliente</label>        
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <input type="" class="form-control" id="" a placeholder="">    
+                        </div>
+                           
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                           <label>Destino</label>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <label id="destino">Ind. Total Home/ Miguel de la Madrid 7643 Col Unidad Modelo</label>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <button id="btnContinuarColp2" class="btn btn-primary float-right" role="button" name="setFilters">Continuar </button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div  class="card-header"  id="headingThree" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <h5 class="mb-0">Selección de Materiales</h5>
+                </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="container cardContainer">
+                            <div class="row">
+                            <!--<a href="misPedidos.html" class="w-100-percent">  -->
+                                <div class="card mb-0 FondoAzulFuerte whiteColor">
+                                  <div class="row no-gutters h-100-percent">
+                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Almacenamiento, Mejoramiento, Condicción</h5>
+                                       
+                                      </div>
                                     </div>
-                                    <div class="h6 mb-0 font-weight-bold text-gray-800">454545</div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-file-alt fa-3x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-md font-weight-bold text-primary text-uppercase mb-1">Orden de Compra
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                      <img src="img/almacenamiento.jpg" class="card-img rotoImg" alt="MisPedidos">
                                     </div>
-                                    <div class="h6 mb-0 font-weight-bold text-gray-800">10034343</div>
+                                  </div>
                                 </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-clipboard-list fa-3x text-gray-300"></i>
-                                </div>
+                             <!-- </a> -->
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-md font-weight-bold text-primary text-uppercase mb-1">Creado
+                            <div class="row">
+                              <div class="card mb-0 FondoAzulMedio whiteColor">
+                                <div class="row no-gutters h-100-percent">
+                                  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Industria</h5>
+                                     
                                     </div>
-                                    <div class="h6 mb-0 font-weight-bold text-gray-800">11 Abril 2020</div>
+                                  </div>
+                                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                    <img src="img/industria.jpg" class="card-img rotoImg" alt="MisPedidos">
+                                  </div>
                                 </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar-alt fa-3x text-gray-300"></i>
-                                </div>
+                              </div>
                             </div>
-                        </div>
+                           
+                          </div>
                     </div>
+                  </div>
                 </div>
-                <div class="col-lg-3 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-md font-weight-bold text-primary text-uppercase mb-1">Monto</div>
-                                    <div class="h6 mb-0 font-weight-bold text-gray-800">$29,879.34</div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-dollar-sign fa-3x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-md font-weight-bold text-primary text-uppercase mb-1">Estatus
-                                    </div>
-                                    <div class="h6 mb-0 font-weight-bold text-gray-800">Verificar SAC</div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar-check	 fa-3x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-md font-weight-bold text-primary text-uppercase mb-1">Destino
-                                    </div>
-                                    <div class="h6 mb-0 font-weight-bold text-gray-800">Con. Suc. Periférico /Tablaje Catastral 97210 Mérida Sin Distrito/colonia</div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-shipping-fast fa-3x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
 
-            </div>
-            <div class="accordion" id="myAccordion">
-                <div class="row">
-                    <div class="col-lg-10 col-md-4 col-sm-4 col-xs-4-">
-                        <h2 class="colorTitulos"></h2>
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div id="item1Header" class="card-header" type="button" data-toggle="collapse" data-target="#expandable1" aria-expanded="true" aria-controls="expandable1">
-                                <h5 class="mb-0">Crear Pedido</h5>
-                            </div>
-                            <div id="expandable1" class="collapse show" aria-labelledby="item1Header" data-parent="#myAccordion">
-                                <div class="card-body">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="accordion" id="myAccordion2">
-                <div class="row">
-                    <div class="col-lg-10 col-md-4 col-sm-4 col-xs-4-">
-                        <h2 class="colorTitulos"></h2>
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div id="item1Header2" class="card-header" type="button" data-toggle="collapse" data-target="#expandable2" aria-expanded="true" aria-controls="expandable2">
-                                <h5 class="mb-0">Cancelar pedido</h5>
-                            </div>
-                            <div id="expandable2" class="collapse show" aria-labelledby="item1Header2" data-parent="#myAccordion2">
-                                <div class="card-body">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="accordion" id="myAccordion3">
-                <div class="row">
-                    <div class="col-lg-10 col-md-4 col-sm-4 col-xs-4-">
-                        <h2 class="colorTitulos"></h2>
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div id="item1Header3" class="card-header" type="button" data-toggle="collapse" data-target="#expandable3" aria-expanded="true" aria-controls="expandable3">
-                                <h5 class="mb-0">Tomar Modelo</h5>
-                            </div>
-                            <div id="expandable3" class="collapse show" aria-labelledby="item1Header3" data-parent="#myAccordion3">
-                                <div class="card-body">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
 
         </div>
