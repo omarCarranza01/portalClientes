@@ -661,3 +661,16 @@ table.dataTable tbody td.no-padding {
 .dataTables_wrapper .row > div {
   padding: 0 !important;
 }
+
+/* Estilos botones PDF - EXCEÑ */
+.btn-warning {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #6c757d;
+}
+
+.btn-warning:hover {
+  background: #ddd;
+  color:   #212529;
+  border-color: #292a2b;
+}
