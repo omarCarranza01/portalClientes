@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,193 +12,314 @@
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="vendor/Bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/Bootstrap4/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="vendor/Bootstrap4/css/bootstrap-reboot.min.css" rel="stylesheet">
 
-    <link href="vendor/DataTables-1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="vendor/Datatables/datatables.min.css" rel="stylesheet">
+    <link href="vendor/Datatables/DataTables-1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="vendor/Datatables/Buttons-1.6.1/css/buttons.bootstrap4.min.css" rel="stylesheet">
+    <link href="vendor/Datatables/Responsive-2.2.3/css/responsive.bootstrap4.min.css" rel="stylesheet">
     <link href="vendor/Select2/select2.min.css" rel="stylesheet">
     <link href="vendor/Select2/select2-bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/Datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-    <link href="vendor/Datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
-    <link href="scss/estilos.css" rel="stylesheet">
+    <link href="vendor/Toastr/toastr.min.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
 
-    <body id="page-top">
-        <!-- Main Content -->
-        <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top navbar-custom">
-            <a href="pedidos.html" class="navbar-brand">
-                <img src="img/logotipo.png" height="70" alt="CoolBrand">
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-    </button>
-
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav">
-                    <li class="active"><a href="misPedidos.html" class="nav-item nav-link active textMenuStyle "><!--<span
+<body id="page-top">
+    <!-- Main Content -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top navbar-custom">
+        <a href="pedidos.html" class="navbar-brand">
+            <img src="img/logotipo.png" height="70" alt="CoolBrand">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="active"><a href="misPedidos.html" class="nav-item nav-link active textMenuStyle ">
+                        <!--<span
               class="fas fa-cart-arrow-down fa-2x " style="padding-right: 9px;"></span>-->Mis Pedidos</a></li>
-                    <li><a href="#" class="nav-item nav-link textMenuStyle"><!--<span class="fa fa-search-plus fa-2x "
+                <li><a href="#" class="nav-item nav-link textMenuStyle">
+                        <!--<span class="fa fa-search-plus fa-2x "
               style="padding-right: 9px;"></span>-->Consulta Existencia</a></li>
-                    <li><a href="EstadoCuenta.html" class="nav-item nav-link textMenuStyle"><!--<span class="fa fa-id-card fa-2x "
+                <li><a href="EstadoCuenta.html" class="nav-item nav-link textMenuStyle">
+                        <!--<span class="fa fa-id-card fa-2x "
               style="padding-right: 9px;"></span>-->Estado de Cuenta</a></li>
-                    <li><a href="#" class="nav-item nav-link disabled textMenuStyle" tabindex="-1"><!--<span
+                <li><a href="#" class="nav-item nav-link disabled textMenuStyle" tabindex="-1">
+                        <!--<span
               class=" fa fa-user-circle fa-2x " style="padding-right: 9px;"></span>-->Admin</a></li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="loginButtonMenu"><a href="index.html" class="nav-item nav-link textMenuStyle"><strong>Usuario</strong></a>
-                    </li>
-                </ul>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="loginButtonMenu"><a href="index.html"
+                        class="nav-item nav-link textMenuStyle"><strong>Usuario</strong></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container ">
+        <div id="accordion" class="accordion">
+            <div class="card no-border-radius">
+                <div class="card-header" id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <h5 class="mb-0">Crear Pedidos</h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <form id="filterStepOne">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">
+                                        <label for="" class="">Seleccione Dirección de Entrega</label>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">
+                                        <label for="" class="">No. Pedido Cliente</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="form-group flex">
+                                            <select class="form-control dropdownActive" id="select_direccionEntrega"
+                                                name="select_direccionEntrega"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <input type="text" class="form-control" id="input_numeroPedido"
+                                            name="input_numeroPedido" placeholder="Numero de pedido">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer border-top-none">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <button id="btnContinuarColp1" class="btn btn-primary float-right" role="button"
+                                            name="setFilters">Continuar </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </nav>
-
-        <div class="container ">
-
-            <div id="accordion">
-                <div class="card">
-                    <div  class="card-header"  id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <h5 class="mb-0">Crear Pedidos</h5>
-                    </div>
-
-              
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">
-                                    <label for="" class="">Seleccione Dirección de Entrega</label>        
-                            </div>
-                            <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">
-                                <label for="" class="">No. Pedido Cliente</label>        
-                        </div>
-                      
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="form-group flex">
-                               
-                                <select class="form-control dropdownActive" id="select_estatus" name="select_estatus">
-        <option value="0"></option>
-        <option value="1">SUC. Tecnica Tectonica Aplicada/Av. Adolfo Lopez Mateos 18 Col el Toreo</option>
-        <option value="2">Fis. Todo Gas Plomeria / Universidad 3214 Col Centro</option>
-        <option value="3">Agr. Polimar Narvarte/ Carr. a San benito 902 Col El Barrial</option>
-        <option value="4">Ind. Total Home/ Miguel de la Madrid 7643 Col Unidad Modelo</option>
-      </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <input type="" class="form-control" id="" a placeholder="">    
-                    </div>
-                        </div>
-
-                    
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <button id="btnContinuarColp1" class="btn btn-primary float-right" role="button" name="setFilters">Continuar </button>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
+            <div class="card no-border-radius">
+                <div class="card-header" id="headingThree" type="button" data-toggle="collapse"
+                    data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <h5 id="cardDynamicHeaderTitle" class="mb-0">Selección de Materiales</h5>
                 </div>
-               
-                <div class="card">
-                  <div  class="card-header"  id="headingThree" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                    <h5 class="mb-0">Selección de Materiales</h5>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div id="cardDynamicBody" class="card-body"></div>
+                    <div id="cardDynamicFooter" class="card-footer border-top-none"></div>
                 </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                               
-                               
-                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4 isResizable">
-                                    <a href="#">
-                                    <div class="card h-100-percent">
-                                        <img class="card-img-top" src="img/almaCliente.png">
-                                        <div class="card-block" style=" padding: 1em;">
-                                            <h5 class="text-bold">Almacenamiento Mejoramiento Conducción</h5>
-                                        </div>
-                                        
-                                    </div>
-                                </a>
-                                </div>
-                               
-                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4 isResizable">
-                                    <a href="#">
-                                    <div class="card h-100-percent">
-                                        <img class="card-img-top" src="img/industriaCliente.png">
-                                        <div class="card-block" style=" padding: 1em;">
-                                            <h5 class="text-bold">Industria</h5>
-                                         
-                                        </div>
-                                       
-                                    </div>
-                                </a>
-                                </div>
-                    </div>
-
-
-                        
-                     
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
             </div>
         </div>
+    </div>
+    <!-- End of Main Content -->
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row ">
+                <div class="col clearfix copyright text-center my-auto">
+                    <div class="float-left">
+                        <span><strong>Aviso de privacidad</strong></span>
+                    </div>
+                    <div class="float-right ">
+                        <span><strong>Grupo Rotoplas, S.A de C.V, México 2020. Todos los derechos
+                                reservados.</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/PopperJs/popper.min.js"></script>
+    <script src="vendor/Bootstrap4/js/bootstrap.min.js"></script>
 
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/Polyfill/Promise/promisePolyfill.min.js"></script>
+    <script src="vendor/Polyfill/FindIndex/findIndexPolyfill.js"></script>
+    <script src="vendor/Datatables/datatables.min.js"></script>
+    <script src="vendor/Datatables/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/Datatables/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendor/Datatables/Buttons-1.6.1/js/dataTables.buttons.min.js"></script>
+    <script src="vendor/Datatables/Buttons-1.6.1/js/buttons.bootstrap4.min.js"></script>
+    <script src="vendor/Datatables/Buttons-1.6.1/js/buttons.colVis.min.js"></script>
+    <script src="vendor/Datatables/Buttons-1.6.1/js/buttons.flash.min.js"></script>
+    <script src="vendor/Datatables/Buttons-1.6.1/js/buttons.html5.min.js"></script>
+    <script src="vendor/Datatables/Buttons-1.6.1/js/buttons.print.min.js"></script>
+    <script src="vendor/Datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+    <script src="vendor/Datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="vendor/Datatables/Responsive-2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="vendor/Datatables/Responsive-2.2.3/js/responsive.bootstrap4.min.js"></script>
+    <script src="vendor/Select2/select2.min.js"></script>
+    <script src="vendor/Underscore/underscore.js"></script>
+    <script src="vendor/Toastr/toastr.min.js"></script>
+    <script src="vendor/Mustache/mustache.min.js"></script>
+    <script src="vendor/MatchHeight/jquery.matchHeight-min.js"></script>
+    <script src="vendor/fontawesome-free/js/all.min.js"></script>
+    <script src="vendor/Moment/moment.min.js"></script>
+    <script src="js/tools-table-v2.js"></script>
+    <script src="js/sessionStorage.js"></script>
+    <script src="js/commonFunctions.js"></script>
+    <script src="js/crearPedido.js"></script>
 
-
-
-
-
-
-
-
-        <!-- End of Main Content -->
-        <!-- Footer -->
-        <footer class="sticky-footer ">
-            <div class="panel-footer" style=" padding-left: 28px; padding-right: 28px; padding-top: 10px;">
-                <div class="row ">
-                    <div class="col clearfix copyright text-center my-auto">
-                        <div class="float-left">
-                            <span><strong>Aviso de privacidad</strong></span>
+    <script id="select2_template" type="x-tmpl-mustache">
+        {{#.}}
+        <option value="{{value}}" data-identifier="{{identifier}}" {{{dataAtributos}}}>{{descripcion}}</option>
+        {{/.}}
+    </script>
+    <script id="seleccionMateriales_template" type="x-tmpl-mustache">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3 mt-4 isResizable">
+                    <div class="card h-100-percent AMC_content cursor-pointer">
+                        <img class="card-img-top" src="img/almaCliente.png">
+                        <div class="card-block" style=" padding: 1em;">
+                            <h5 class="text-bold">Almacenamiento Mejoramiento Conducción</h5>
                         </div>
-                        <div class="float-right ">
-                            <span><strong>Grupo Rotoplas, S.A de C.V, México 2020. Todos los derechos
-                reservados.</strong></span>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mt-4 isResizable cursor-pointer">
+                    <div class="card h-100-percent I_content">
+                        <img class="card-img-top" src="img/industriaCliente.png">
+                        <div class="card-block" style=" padding: 1em;">
+                            <h5 class="text-bold">Industria</h5>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-
-
-
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
-
-        <script src="vendor/DataTables-1.10.20/js/jquery.dataTables.js"></script>
-        <script src="vendor/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script>
-        <script src="vendor/Moment/moment.min.js"></script>
-        <script src="vendor/Select2/select2.min.js"></script>
-        <script src="vendor/MatchHeight/jquery.matchHeight-min.js"></script>
-        <script src="vendor/Datepicker/js/bootstrap-datepicker.min.js"></script>
-        <script src="vendor/Datepicker/locales/bootstrap-datepicker.es.min.js"></script>
-        <script src="js/crearPedido.js"></script>
-
-        <script>
-            initChartDoughnut();
-          </script>
-    </body>
+        </div>
+    </script>
+    <script id="input_cantidad_template" type="x-tmpl-mustache">
+        <input type="text" class="form-control input_searchProductCantidad" name="input_searchProductCantidad" placeholder="Cantidad">
+    </script>
+    <script id="searchProducts_template" type="x-tmpl-mustache">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
+                    <div id="dt_searchProducts_content" style="width: 100%">
+                        <table id="dt_searchProducts" class="table table-hover table-striped table-bordered" width="100%" data-dt-pdfBtn data-dt-excelBtn data-dt-pdfBtnColumns="0,1,2,2" data-dt-excelBtnColumns="0,1,2,3">
+                            <thead>
+                                <tr>
+                                    <th data-dt-columnName="control" data-dt-render="controlRender" data-columnWidth="2%"></th>
+                                    <th class="no-wrap" data-prority="1" data-dt-render="free" data-columnWidth="25%">Cantidad</th>
+                                    <th class="no-wrap" data-prority="2" data-dt-columnName="descripcion" data-columnWidth="25%" data-dt-searcheable data-dt-orderable>Descripcion</th>
+                                    <th class="no-wrap" data-prority="3" data-dt-columnName="um" data-columnWidth="25%" data-dt-orderable>UM</th>
+                                    <th class="no-wrap" data-prority="4" data-dt-columnName="noSku" data-columnWidth="25%" data-dt-searcheable data-dt-orderable>No. sku</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="cardDynamicFooter_template" type="x-tmpl-mustache">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    {{#isList}}
+                        <div class="{{divClass}}">
+                            {{#btnList}}
+                                <button type="button" id="{{btnId}}" name="{{btnName}}" class="btn btn-primary {{btnClass}}" role="button">{{btnText}}</button>
+                            {{/btnList}}
+                        </div>
+                    {{/isList}}
+                    {{^isList}}
+                        <div class="{{divClass}}">
+                            <button type="button" id="{{btnId}}" name="{{btnName}}" class="btn btn-primary {{btnClass}}" role="button">{{btnText}}</button>
+                        </div>
+                    {{/isList}}
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="actions_template" type="x-tmpl-mustache">
+        <a class="eliminarProducto" role="button" title="eliminar">
+            <i class="far fa-trash-alt cursor-pointer" style="font-size:20px"></i>
+            <!-- <span>
+                <strong>Eliminar</strong>
+            </span> -->
+        </a>
+    </script>
+    <script id="selectedProducts_template" type="x-tmpl-mustache">
+        <div class="container">
+            {{#seguirComprando}}
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <button id="btn_seguirComprando" type="button" class="btn btn-primary btn-sm float-right">Seguir Comprando</button>
+                </div>
+            </div>
+            {{/seguirComprando}}
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <label><strong>No. Pedido Cliente:</strong></label>
+                    <p id="p_numeroPedido">{{noPedido}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <label><strong>Destino:</strong></label>
+                    <p id="p_destino">{{destino}}</p>
+                </div>
+            </div>
+            {{#productSelected}}
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
+                    <div id="dt_ProductsSelected_content" style="width: 100%">
+                        <table id="dt_ProductsSelected" class="table table-hover table-striped table-bordered" width="100%" data-dt-pdfBtn data-dt-excelBtn data-dt-pdfBtnColumns="0,1,2,2" data-dt-excelBtnColumns="0,1,2,3">
+                            <thead>
+                                <tr>
+                                    <th data-dt-columnName="control" data-dt-render="controlRender" data-columnWidth="2%"></th>
+                                    <th class="no-wrap" data-prority="1" data-dt-render="actions" data-columnWidth="5%"></th>
+                                    <th class="no-wrap" data-prority="2" data-dt-columnName="pos" data-columnWidth="10%">Pos</th>
+                                    <th class="no-wrap" data-prority="3" data-dt-columnName="noMaterial" data-columnWidth="10%" data-dt-searcheable data-dt-orderable>Numero Material</th>
+                                    <th class="no-wrap" data-prority="4" data-dt-columnName="descripcion" data-columnWidth="15%" data-dt-orderable>Descripcion</th>
+                                    <th class="no-wrap" data-prority="5" data-dt-columnName="cantidad" data-columnWidth="10%" data-dt-searcheable data-dt-orderable>Cantidad</th>
+                                    <th class="no-wrap" data-prority="5" data-dt-columnName="um" data-columnWidth="10%" data-dt-searcheable data-dt-orderable>UM</th>
+                                    <th class="no-wrap" data-prority="5" data-dt-columnName="monto" data-columnWidth="10%" data-dt-searcheable data-dt-orderable>Monto</th>
+                                    <th class="no-wrap" data-prority="5" data-dt-columnName="precioNeto" data-columnWidth="10%" data-dt-searcheable data-dt-orderable>Precio Neto</th>
+                                    <th class="no-wrap" data-prority="5" data-dt-columnName="mon" data-columnWidth="10%" data-dt-searcheable data-dt-orderable>Moneda</th>
+                                    <th class="no-wrap" data-prority="5" data-dt-render="fecha" data-dt-columnName="fecha" data-columnWidth="15%" data-dt-searcheable data-dt-orderable>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {{/productSelected}}
+            {{#facturacion}}
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
+                    <label><strong>Uso CFDI</strong></label>
+                    <div class="form-group flex">
+                        <select class="form-control dropdownActive" id="select_cfdi" name="select_cfdi"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
+                    <label><strong>Método de pago</strong></label>
+                    <div class="form-group flex">
+                        <select class="form-control dropdownActive" id="select_metodoPago" name="select_metodoPago"></select>
+                    </div>
+                </div>
+            </div>
+            {{/facturacion}}
+        </div>
+    </script>
+</body>
 
 </html>

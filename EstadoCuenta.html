@@ -18,15 +18,19 @@
     rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="vendor/Bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/Bootstrap4/css/bootstrap-grid.min.css" rel="stylesheet">
+  <link href="vendor/Bootstrap4/css/bootstrap-reboot.min.css" rel="stylesheet">
 
-  <link href="vendor/DataTables-1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="vendor/Datatables/datatables.min.css" rel="stylesheet">
+  <link href="vendor/Datatables/DataTables-1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="vendor/Datatables/Responsive-2.2.3/css/responsive.bootstrap4.min.css" rel="stylesheet">
   <link href="vendor/Select2/select2.min.css" rel="stylesheet">
   <link href="vendor/Select2/select2-bootstrap.min.css" rel="stylesheet">
   <link href="vendor/Datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
   <link href="vendor/Datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
   <link href="vendor/ChartJs/Chart.min.css" rel="stylesheet">
-  <link href="scss/estilos.css" rel="stylesheet">
+  <link href="css/estilos.css" rel="stylesheet">
 
 <body id="page-top">
 
@@ -46,10 +50,16 @@
 
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav">
-              <li><a href="misPedidos.html" class="nav-item nav-link textMenuStyle "><!--<span class="fas fa-cart-arrow-down fa-2x " style="padding-right: 9px;"></span>-->Mis Pedidos</a></li>
-              <li><a href="#" class="nav-item nav-link textMenuStyle"><!--<span class="fa fa-search-plus fa-2x " style="padding-right: 9px;"></span>-->Consulta Existencia</a></li>
-              <li class="active"><a href="EstadoCuenta.html" class="nav-item nav-link active textMenuStyle"><!--<span class="fa fa-id-card fa-2x " style="padding-right: 9px;"></span>-->Estado de Cuenta</a></li>
-              <li><a href="#" class="nav-item nav-link disabled textMenuStyle" tabindex="-1"><!--<span class=" fa fa-user-circle fa-2x " style="padding-right: 9px;"></span>-->Admin</a></li>
+              <li><a href="misPedidos.html" class="nav-item nav-link textMenuStyle ">
+                  <!--<span class="fas fa-cart-arrow-down fa-2x " style="padding-right: 9px;"></span>-->Mis Pedidos</a>
+              </li>
+              <li><a href="#" class="nav-item nav-link textMenuStyle">
+                  <!--<span class="fa fa-search-plus fa-2x " style="padding-right: 9px;"></span>-->Consulta
+                  Existencia</a></li>
+              <li class="active"><a href="EstadoCuenta.html" class="nav-item nav-link active textMenuStyle">
+                  <!--<span class="fa fa-id-card fa-2x " style="padding-right: 9px;"></span>-->Estado de Cuenta</a></li>
+              <li><a href="#" class="nav-item nav-link disabled textMenuStyle" tabindex="-1">
+                  <!--<span class=" fa fa-user-circle fa-2x " style="padding-right: 9px;"></span>-->Admin</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="loginButtonMenu"><a href="index.html"
@@ -66,7 +76,8 @@
               <div class="col-12">
                 <div class="card">
                   <div id="item1Header" class="card-header" type="button" data-toggle="collapse"
-                    data-target="#expandable1" aria-expanded="true" aria-controls="expandable1" style="background-color: #236192;color: white;">
+                    data-target="#expandable1" aria-expanded="true" aria-controls="expandable1"
+                    style="background-color: #236192;color: white;">
                     <h5 class="mb-0">Filtros</h5>
                   </div>
                   <div id="expandable1" class="collapse show" aria-labelledby="item1Header" data-parent="#myAccordion">
@@ -270,7 +281,8 @@
                       Grafica
                     </div>
                     <div class="card-body">
-                      <div class="chart-container h-200" data-height="h-200" style="height:100%; width:100%;padding-top: 10px;">
+                      <div class="chart-container h-200" data-height="h-200"
+                        style="height:100%; width:100%;padding-top: 10px;">
                         <canvas id="chart_puertos_origen"></canvas>
                       </div>
                     </div>
@@ -293,15 +305,17 @@
 
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-2 col-md-2 mb-2">
-                  <div class="card border-left-success shadow  py-2"> <!--h-100-->
-                    <div class=" pl-2">  <!--card-body-->
+                  <div class="card border-left-success shadow  py-2">
+                    <!--h-100-->
+                    <div class=" pl-2">
+                      <!--card-body-->
                       <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                          
+
                           <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             <i class="fas fa-file-excel fa-2x"></i>
                             <a href="#">Descargar XLS</a>
-                            
+
                           </div>
 
                         </div>
@@ -322,8 +336,8 @@
                     <div class=" pl-2">
                       <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                          
-                         
+
+
                           <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                             <i class="fas fa-file-pdf fa-2x"></i>
                             <a href="#">Descargar PDF</a>
@@ -381,16 +395,11 @@
             </div>
           </div>
         </div>
-
-
-
-
-
       </div>
       <!-- End of Main Content -->
       <!-- Footer -->
-      <footer class="sticky-footer ">
-        <div class="panel-footer" style=" padding-left: 28px; padding-right: 28px;">
+      <footer>
+        <div class="container">
           <div class="row ">
             <div class="col clearfix copyright text-center my-auto">
               <div class="float-left">
@@ -630,16 +639,17 @@
 
       <!-- Bootstrap core JavaScript-->
       <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="vendor/PopperJs/popper.min.js"></script>
+      <script src="vendor/Bootstrap4/js/bootstrap.min.js"></script>
 
       <!-- Core plugin JavaScript-->
       <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin-2.min.js"></script>
-
-      <script src="vendor/DataTables-1.10.20/js/jquery.dataTables.js"></script>
-      <script src="vendor/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script>
+      <script src="vendor/Datatables/datatables.min.js"></script>
+      <script src="vendor/Datatables/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
+      <script src="vendor/Datatables/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script>
+      <script src="vendor/Datatables/Responsive-2.2.3/js/dataTables.responsive.min.js"></script>
+      <script src="vendor/Datatables/Responsive-2.2.3/js/responsive.bootstrap4.min.js"></script>
       <script src="vendor/Moment/moment.min.js"></script>
       <script src="vendor/Select2/select2.min.js"></script>
       <script src="vendor/Datepicker/js/bootstrap-datepicker.min.js"></script>
