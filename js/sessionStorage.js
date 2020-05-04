@@ -13,6 +13,14 @@ var RESS = (function () {
         _setRESSProperty('productosSeleccionados', productosSeleccionados);
     }
 
+    function _setCFDISeleccionado(CFDISeleccionado) {
+        _setRESSProperty('CFDISeleccionado', CFDISeleccionado);
+    }
+
+    function _setMetodoPagoSeleccionado(metodoPagoSeleccionado) {
+        _setRESSProperty('metodoPagoSeleccionado', metodoPagoSeleccionado);
+    }
+
     function _setRESSProperty(key, value) {
         var _RESSJson = sessionStorage.getItem(_RESSName),
             _RESS = {};
@@ -21,7 +29,9 @@ var RESS = (function () {
             _RESS = {
                 cargarDireccionEntrega: null,
                 productos: null,
-                productosSeleccionados: null
+                productosSeleccionados: null,
+                CFDISeleccionado: null,
+                metodoPagoSeleccionado: null
             };
         } else {
             _RESS = JSON.parse(_RESSJson);
@@ -49,6 +59,8 @@ var RESS = (function () {
         removeRESSObjext: _removeRESSObjext,
         setCargarDireccionEntrega: _setCargarDireccionEntrega,
         setProductos: _setProductos,
-        setProductosSeleccionados: _setProductosSeleccionados
+        setProductosSeleccionados: _setProductosSeleccionados,
+        setCFDISeleccionado: _setCFDISeleccionado,
+        setMetodoPagoSeleccionado: _setMetodoPagoSeleccionado
     };
 })();
