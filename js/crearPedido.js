@@ -1,16 +1,16 @@
-var crearPedido = (function () {
+var crearPedido = (function() {
     var $dt = null,
         $dtSeleccionados = null;
 
-    var init = function () {
+    var init = function() {
         $('.isResizable').matchHeight();
         $('#headingThree').prop('disabled', true);
         initEvents();
         cargarDireccionEntrega.fill();
     };
 
-    var initEvents = function () {
-        $("#btnContinuarColp1").off().on("click", function (e) {
+    var initEvents = function() {
+        $("#btnContinuarColp1").off().on("click", function(e) {
             e.preventDefault();
             if (!validStepOne()) {
                 return;
@@ -23,51 +23,54 @@ var crearPedido = (function () {
             loadMustacheTemplate('cardDynamicFooter_template', 'cardDynamicFooter', {
                 isList: {
                     divClass: 'footerButtonsRigth',
-                    btnList: [
-                        {
-                            btnId: 'btn_cancelAddProducts', btnName: 'btn_cancelAddProducts', btnText: 'Cancelar'
-                        }
-                    ]
+                    btnList: [{
+                        btnId: 'btn_cancelAddProducts',
+                        btnName: 'btn_cancelAddProducts',
+                        btnText: 'Cancelar'
+                    }]
                 }
             });
             $('#cardDynamicFooter').show();
-            setTimeout(function () {
+            setTimeout(function() {
                 $('.isResizable').matchHeight();
             }, 100)
             initEvents();
         });
-        $('div.AMC_content').off().on('click', function (e) {
+        $('div.AMC_content').off().on('click', function(e) {
             e.preventDefault();
             $('#cardDynamicFooter').show();
             loadMustacheTemplate('searchProducts_template', 'cardDynamicBody');
             loadMustacheTemplate('cardDynamicFooter_template', 'cardDynamicFooter', {
                 isList: {
                     divClass: 'footerButtonsRigth',
-                    btnList: [
-                        {
-                            btnId: 'btn_cancelAddProducts', btnName: 'btn_cancelAddProducts', btnText: 'Cancelar'
+                    btnList: [{
+                            btnId: 'btn_cancelAddProducts',
+                            btnName: 'btn_cancelAddProducts',
+                            btnText: 'Cancelar'
                         },
                         {
-                            btnId: 'btn_addProducts', btnName: 'btn_addProducts', btnText: 'Agregar'
+                            btnId: 'btn_addProducts',
+                            btnName: 'btn_addProducts',
+                            btnText: 'Agregar'
                         }
                     ]
                 }
             });
             $('#cardDynamicHeaderTitle').html('Buscar Productos');
             return cargarDTSearchProductos.fill()
-                .then(function () {
+                .then(function() {
                     initEvents();
                 });
         });
-        $('#input_numeroPedido').off().on('keyup', function (e) {
+        $('#input_numeroPedido').off().on('keyup', function(e) {
             e.preventDefault();
             validNumber(e);
         });
-        $('input.input_searchProductCantidad').off().on('keyup', function (e) {
+        $('input.input_searchProductCantidad').off().on('keyup', function(e) {
             e.preventDefault();
             validNumber(e);
         });
-        $('#btn_addProducts').off().on('click', function (e) {
+        $('#btn_addProducts').off().on('click', function(e) {
             e.preventDefault();
             var rowsCount = $dt.rows().count(),
                 tableResultArr = [],
@@ -87,7 +90,7 @@ var crearPedido = (function () {
                 count++;
             }
 
-            var filterResult = tableResultArr.filter(function (a, e) { return a.cantidad !== null && a.cantidad !== '' });
+            var filterResult = tableResultArr.filter(function(a, e) { return a.cantidad !== null && a.cantidad !== '' });
 
             if (filterResult.length === 0) {
                 showToastr('Agregue una cantidad al menos en un producto', 'Aviso', {
@@ -96,7 +99,7 @@ var crearPedido = (function () {
                 return;
             }
 
-            var totalCantidad = filterResult.reduce(function (a, e, i) { return a + parseInt(e.cantidad); }, 0);
+            var totalCantidad = filterResult.reduce(function(a, e, i) { return a + parseInt(e.cantidad); }, 0);
 
             if (totalCantidad === 0) {
                 showToastr('La suma de las cantidades debe ser diferente a 0', 'Aviso', {
@@ -112,12 +115,15 @@ var crearPedido = (function () {
             loadMustacheTemplate('cardDynamicFooter_template', 'cardDynamicFooter', {
                 isList: {
                     divClass: 'footerButtonsRigth',
-                    btnList: [
-                        {
-                            btnId: 'btn_cancelAddProducts', btnName: 'btn_cancelAddProducts', btnText: 'Cancelar'
+                    btnList: [{
+                            btnId: 'btn_cancelAddProducts',
+                            btnName: 'btn_cancelAddProducts',
+                            btnText: 'Cancelar'
                         },
                         {
-                            btnId: 'btn_listProductSelectedNext', btnName: 'btn_adbtn_listProductSelectedNextdProducts', btnText: 'Siguiente'
+                            btnId: 'btn_listProductSelectedNext',
+                            btnName: 'btn_adbtn_listProductSelectedNextdProducts',
+                            btnText: 'Continuar'
                         }
                     ]
                 }
@@ -126,7 +132,7 @@ var crearPedido = (function () {
             cargarDTListProductosSelected.fill()
             initEvents();
         });
-        $('#btn_cancelAddProducts').off().on('click', function (e) {
+        $('#btn_cancelAddProducts').off().on('click', function(e) {
             e.preventDefault();
             RESS.removeRESSObjext();
             $('#cardDynamicFooter, #cardDynamicBody').html(null)
@@ -135,30 +141,33 @@ var crearPedido = (function () {
             $('#headingThree').prop('disabled', true);
             $('#cardDynamicHeaderTitle').html('Selección de Materiales');
         });
-        $('#btn_seguirComprando').off().on('click', function (e) {
+        $('#btn_seguirComprando').off().on('click', function(e) {
             e.preventDefault();
             $('#cardDynamicFooter').show();
             loadMustacheTemplate('searchProducts_template', 'cardDynamicBody');
             loadMustacheTemplate('cardDynamicFooter_template', 'cardDynamicFooter', {
                 isList: {
                     divClass: 'footerButtonsRigth',
-                    btnList: [
-                        {
-                            btnId: 'btn_cancelAddProducts', btnName: 'btn_cancelAddProducts', btnText: 'Cancelar'
+                    btnList: [{
+                            btnId: 'btn_cancelAddProducts',
+                            btnName: 'btn_cancelAddProducts',
+                            btnText: 'Cancelar'
                         },
                         {
-                            btnId: 'btn_addProducts', btnName: 'btn_addProducts', btnText: 'Agregar'
+                            btnId: 'btn_addProducts',
+                            btnName: 'btn_addProducts',
+                            btnText: 'Agregar'
                         }
                     ]
                 }
             });
             $('#cardDynamicHeaderTitle').html('Buscar Productos');
             return cargarDTSearchProductos.fill(true)
-                .then(function () {
+                .then(function() {
                     initEvents();
                 });
         });
-        $('#btn_listProductSelectedNext').off().on('click', function (e) {
+        $('#btn_listProductSelectedNext').off().on('click', function(e) {
             var rowsCount = $dtSeleccionados.rows().count();
             if (rowsCount === 0) {
                 showToastr('Agregue al menos en un producto', 'Aviso', {
@@ -171,18 +180,18 @@ var crearPedido = (function () {
             loadMustacheTemplate('cardDynamicFooter_template', 'cardDynamicFooter', {
                 isList: {
                     divClass: 'footerButtonsRigth',
-                    btnList: [
-                        {
-                            btnId: 'btn_cancelAddProducts', btnName: 'btn_cancelAddProducts', btnText: 'Cancelar'
-                        }
-                    ]
+                    btnList: [{
+                        btnId: 'btn_cancelAddProducts',
+                        btnName: 'btn_cancelAddProducts',
+                        btnText: 'Cancelar'
+                    }]
                 }
             });
             $('#cardDynamicHeaderTitle').html('Facturación');
             return cargarCFDI.fill()
-                .then(function () {
+                .then(function() {
                     return cargarMetodosPago.fill()
-                        .then(function () {
+                        .then(function() {
                             initEvents();
                         });
                 });
@@ -190,9 +199,10 @@ var crearPedido = (function () {
     };
 
     var cargarDireccionEntrega = {
-        fill: function () {debugger
+        fill: function() {
+            debugger
             return this.data()
-                .then(function (rs) {
+                .then(function(rs) {
                     if (!rs) {
                         showToastr('No existen direcciones de entrega', 'Aviso', {
                             type: typeNotification.warning
@@ -226,14 +236,13 @@ var crearPedido = (function () {
                         width: '100%'
                     });
                 })
-                .catch(function () {
+                .catch(function() {
 
                 });
         },
-        data: function () {
-            return new Promise(function (resolve, reject) {
-                var model = [
-                    {
+        data: function() {
+            return new Promise(function(resolve, reject) {
+                var model = [{
                         id: 1,
                         descripcion: 'SUC. Tecnica Tectonica Aplicada/Av. Adolfo Lopez Mateos 18 Colel Toreo'
                     },
@@ -256,9 +265,9 @@ var crearPedido = (function () {
     };
 
     var cargarDTSearchProductos = {
-        fill: function (loadPreviusValues) {
+        fill: function(loadPreviusValues) {
             return this.data()
-                .then(function (rs) {
+                .then(function(rs) {
                     if (!rs) {
                         showToastr('No existen productos', 'Aviso', {
                             type: typeNotification.warning
@@ -276,14 +285,14 @@ var crearPedido = (function () {
                         searching: true,
                         data: rs,
                         responsive: true,
-                        free: function (data, type, row, meta) {
+                        free: function(data, type, row, meta) {
                             if (meta.col === 1) {
                                 return renderMustacheTemplate('input_cantidad_template');
                             }
                         },
-                        rowCallback: function (row, data, api) {
+                        rowCallback: function(row, data, api) {
                             if (loadPreviusValues) {
-                                var findData = RESS.getRESSObject().productosSeleccionados.find(function (a, e) {
+                                var findData = RESS.getRESSObject().productosSeleccionados.find(function(a, e) {
                                     return a.data.id === data.id;
                                 });
                                 if (findData) {
@@ -293,14 +302,13 @@ var crearPedido = (function () {
                         }
                     });
                 })
-                .catch(function () {
+                .catch(function() {
 
                 });
         },
-        data: function () {
-            return new Promise(function (resolve, reject) {
-                var model = [
-                    {
+        data: function() {
+            return new Promise(function(resolve, reject) {
+                var model = [{
                         id: 1,
                         descripcion: 'Valvula de esfera desmontable 63 x 63 mm',
                         um: 'PZA',
@@ -349,7 +357,7 @@ var crearPedido = (function () {
     };
 
     var cargarDTListProductosSelected = {
-        fill: function () {
+        fill: function() {
             var ressObj = RESS.getRESSObject(),
                 rs = ressObj.productosSeleccionados;
 
@@ -360,7 +368,7 @@ var crearPedido = (function () {
                 return;
             }
 
-            var model = rs.map(function (a, e) {
+            var model = rs.map(function(a, e) {
                 var obj = {
                     id: a.data.id,
                     pos: e + 1,
@@ -385,15 +393,15 @@ var crearPedido = (function () {
                 searching: true,
                 data: model,
                 responsive: true,
-                actions: function (data, type, row, meta) {
+                actions: function(data, type, row, meta) {
                     return renderMustacheTemplate('actions_template');
                 },
-                rowCallback: function (row, data, api) {
-                    $(row).find('.eliminarProducto').off().on('click', function (e) {
+                rowCallback: function(row, data, api) {
+                    $(row).find('.eliminarProducto').off().on('click', function(e) {
                         debugger
                         var dta = data,
                             productosSeleccionados = RESS.getRESSObject().productosSeleccionados,
-                            findIndex = productosSeleccionados.findIndex(function (a, e, i) { return a.data.id === data.id; });
+                            findIndex = productosSeleccionados.findIndex(function(a, e, i) { return a.data.id === data.id; });
 
                         productosSeleccionados.splice(findIndex, 1);
                         RESS.setProductosSeleccionados(productosSeleccionados);
@@ -405,9 +413,9 @@ var crearPedido = (function () {
     };
 
     var cargarCFDI = {
-        fill: function () {
+        fill: function() {
             return this.data()
-                .then(function (rs) {
+                .then(function(rs) {
                     if (!rs) {
                         showToastr('No existen CFDI', 'Aviso', {
                             type: typeNotification.warning
@@ -441,14 +449,13 @@ var crearPedido = (function () {
                         width: '100%'
                     });
                 })
-                .catch(function () {
+                .catch(function() {
 
                 });
         },
-        data: function () {
-            return new Promise(function (resolve, reject) {
-                var model = [
-                    {
+        data: function() {
+            return new Promise(function(resolve, reject) {
+                var model = [{
                         id: 1,
                         descripcion: 'G01 Adquisición de mercancias'
                     },
@@ -463,8 +470,7 @@ var crearPedido = (function () {
                     {
                         id: 4,
                         descripcion: '001 Construcciones'
-                    }
-                    ,
+                    },
                     {
                         id: 5,
                         descripcion: '002 Mobiliario y equipo de oficina para inversiones'
@@ -500,9 +506,9 @@ var crearPedido = (function () {
     };
 
     var cargarMetodosPago = {
-        fill: function () {
+        fill: function() {
             return this.data()
-                .then(function (rs) {
+                .then(function(rs) {
                     if (!rs) {
                         showToastr('No existen CFDI', 'Aviso', {
                             type: typeNotification.warning
@@ -536,14 +542,13 @@ var crearPedido = (function () {
                         width: '100%'
                     });
                 })
-                .catch(function () {
+                .catch(function() {
 
                 });
         },
-        data: function () {
-            return new Promise(function (resolve, reject) {
-                var model = [
-                    {
+        data: function() {
+            return new Promise(function(resolve, reject) {
+                var model = [{
                         id: 1,
                         descripcion: 'PPD Pago Parcialidades'
                     },
@@ -557,7 +562,7 @@ var crearPedido = (function () {
         }
     };
 
-    var validStepOne = function () {
+    var validStepOne = function() {
         var values = $('#filterStepOne').serializeForm();
         if (!values.select_direccionEntrega) {
             showToastr('Seleccione una dirección de entrega', 'Aviso', {
@@ -579,6 +584,6 @@ var crearPedido = (function () {
         initEvents: initEvents
     };
 })();
-$(document).ready(function () {
+$(document).ready(function() {
     crearPedido.init();
 });
