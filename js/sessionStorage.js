@@ -5,6 +5,10 @@ var RESS = (function () {
         _setRESSProperty('cargarDireccionEntrega', cargarDireccionEntrega);
     }
 
+    function _setSeleccionMateriales(seleccionMateriales) {
+        _setRESSProperty('seleccionMateriales', seleccionMateriales);
+    }
+
     function _setProductos(productos) {
         _setRESSProperty('productos', productos);
     }
@@ -13,12 +17,28 @@ var RESS = (function () {
         _setRESSProperty('productosSeleccionados', productosSeleccionados);
     }
 
+    function _setcargarCFDI(cargarCFDI) {
+        _setRESSProperty('cargarCFDI', cargarCFDI);
+    }
+
     function _setCFDISeleccionado(CFDISeleccionado) {
         _setRESSProperty('CFDISeleccionado', CFDISeleccionado);
     }
 
+    function _setcargarMetodosPago(cargarMetodosPago) {
+        _setRESSProperty('cargarMetodosPago', cargarMetodosPago);
+    }
+
     function _setMetodoPagoSeleccionado(metodoPagoSeleccionado) {
         _setRESSProperty('metodoPagoSeleccionado', metodoPagoSeleccionado);
+    }
+
+    function _setUsoMaterialSeleccionado(usoMaterialSeleccionado) {
+        _setRESSProperty('usoMaterialSeleccionado', usoMaterialSeleccionado);
+    }
+
+    function _setComentarios(comentarios) {
+        _setRESSProperty('comentarios', comentarios);
     }
 
     function _setRESSProperty(key, value) {
@@ -30,8 +50,13 @@ var RESS = (function () {
                 cargarDireccionEntrega: null,
                 productos: null,
                 productosSeleccionados: null,
+                cargarCFDI: null,
                 CFDISeleccionado: null,
-                metodoPagoSeleccionado: null
+                cargarMetodosPago: null,
+                metodoPagoSeleccionado: null,
+                seleccionMateriales: null,
+                usoMaterialSeleccionado: null,
+                comentarios: null
             };
         } else {
             _RESS = JSON.parse(_RESSJson);
@@ -60,7 +85,12 @@ var RESS = (function () {
         setCargarDireccionEntrega: _setCargarDireccionEntrega,
         setProductos: _setProductos,
         setProductosSeleccionados: _setProductosSeleccionados,
+        setcargarCFDI: _setcargarCFDI,
         setCFDISeleccionado: _setCFDISeleccionado,
-        setMetodoPagoSeleccionado: _setMetodoPagoSeleccionado
+        setcargarMetodosPago: _setcargarMetodosPago,
+        setMetodoPagoSeleccionado: _setMetodoPagoSeleccionado,
+        setSeleccionMateriales: _setSeleccionMateriales,
+        setUsoMaterialSeleccionado: _setUsoMaterialSeleccionado,
+        setComentarios: _setComentarios
     };
 })();

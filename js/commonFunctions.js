@@ -218,3 +218,9 @@ function confirmModal(titulo, mensaje, cancelarTexto, confirmarTexto, show, call
         }
     });
 }
+
+function mensajes() {
+    return {
+        Generico01: 'Favor de contactarnos Correo servicioaclientes@rotoplas.com o al Teléfono 800 506 3000'
+    }
+}
