@@ -31,6 +31,8 @@
   <link href="vendor/Datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
   <link href="vendor/ChartJs/Chart.min.css" rel="stylesheet">
   <link href="vendor/Toastr/toastr.min.css" rel="stylesheet">
+  <link href="vendor/Datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+  <link href="vendor/Datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
   <link href="css/estilos.css" rel="stylesheet">
 
 <body id="page-top">
@@ -54,12 +56,12 @@
               <li><a href="misPedidos.html" class="nav-item nav-link textMenuStyle ">
                   <!--<span class="fas fa-cart-arrow-down fa-2x " style="padding-right: 9px;"></span>-->Mis Pedidos</a>
               </li>
-              <li class="active"><a href="cotizaciones.html" class="nav-item nav-link textMenuStyle ">
-                Cotizaciones</a>
-            </li>
-              <li ><a href="consultaExistencia.html" class="nav-item nav-link textMenuStyle">
-                  <!--<span class="fa fa-search-plus fa-2x " style="padding-right: 9px;"></span>-->Consulta
-                  Existencia</a></li>
+              <li class="active"><a href="#" class="nav-item nav-link textMenuStyle">
+                <!--<span class="fa fa-search-plus fa-2x " style="padding-right: 9px;"></span>-->Cotizaciones</a></li>
+              <li><a href="consultaExistencia.html" class="nav-item nav-link textMenuStyle">
+                <!--<span class="fa fa-search-plus fa-2x " style="padding-right: 9px;"></span>-->Consulta
+                Existencia</a></li>
+         
               <li class=""><a href="EstadoCuenta.html" class="nav-item nav-link active textMenuStyle">
                   <!--<span class="fa fa-id-card fa-2x " style="padding-right: 9px;"></span>-->Estado de Cuenta</a></li>
 
@@ -109,53 +111,27 @@
                   </div>
                   <div id="expandable1" class="collapse show" aria-labelledby="item1Header" data-parent="#myAccordion">
                     <div class="card-body">
-                      <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                          <div class="form-group flex">
-                            <label for="" class="labelLeftInput fillWidthAvaible">Buscar por</label>
-                            <select class="form-control dropdownActive" id="select_buscarPor"
-                              name="select_buscarPor"></select>
-                          </div>
-                        </div>
-                       
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 planta hidden">
-                          <div class="form-group flex ">
-                            <label for="" class="labelLeftInput fillWidthAvaible">Planta</label>
-                            <select class="form-control dropdownActive" id="select_planta"
-                              name="select_planta"></select>
-                          </div>
-                        </div>
-                        
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 localidad hidden">
-                          <div class="form-group flex  ">
-                            <label for="" class="labelLeftInput fillWidthAvaible">Estado</label>
-                            <select class="form-control dropdownActive" id="select_estado"
-                              name="select_estado"></select>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  localidad hidden ">
-                         
-                          <div class="form-group flex ">
-                            <label for="" class="labelLeftInput fillWidthAvaible">Localidad</label>
-                            <select class="form-control dropdownActive" id="select_localidad"
-                              name="select_localidad"></select>
-                          </div>
-                        
-                        </div>
-                      
-                      </div>
+                 
                       <div class="row">
 
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <div class="">
-                            <label for="select_buscarPor" class=" fillWidthAvaible">No. de material ó
-                              descripción</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <div class="form-group ">
+                            <label for="date_start" class=" ">Fecha de corte</label>
+                            <div class="input-group date date-start">
+                              <input id="date_start" name="date_start" type="text" class="form-control" />
+                              <div class="input-group-append">
+                                <span class="input-group-text far fa-calendar-alt"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <div class="f">
+                            <label for="select_buscarPor" class="">No Cotización</label>
                             <input type="text" class="form-control" id="input_nMatDesc" name="input_nMatDesc"
                               placeholder="">
                           </div>
                         </div>
-
                       </div>
                       <br>
                       <div class="row">
@@ -180,14 +156,6 @@
               </div>
             </div>
           </div>
-
-
-
-
-
-
-
-
 
 
           
@@ -241,7 +209,7 @@
     <script src="vendor/Toastr/toastr.min.js"></script>
     <script src="vendor/Mustache/mustache.min.js"></script>
       <script src="vendor/MatchHeight/jquery.matchHeight-min.js"></script>
-      <script src="vendor/fontawesome-free/js/all.min.js"></script>
+    
       <script src="vendor/Moment/moment.min.js"></script>
       <script src="js/tools-table-v2.js"></script>
       <script src="js/sessionStorage.js"></script>
@@ -254,21 +222,22 @@
         {{/.}}
     </script>
 
-    <script id="searchProducts_template" type="x-tmpl-mustache">
+    <script id="listaCotizacion_template" type="x-tmpl-mustache">
       <div class="container">
           <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
-                  <div id="dt_searchProducts_content" style="width: 100%">
-                      <table id="dt_searchProducts" class="table table-hover table-striped table-bordered" width="100%" data-dt-pdfBtn data-dt-excelBtn data-dt-pdfBtnColumns="1,2,3,4" data-dt-excelBtnColumns="1,2,3,4">
+                  <div id="dt_searchListaCotizacion_content" style="width: 100%">
+                      <table id="dt_searchListaCotizacion" class="table table-hover table-striped table-bordered" width="100%" data-dt-pdfBtn data-dt-excelBtn data-dt-pdfBtnColumns="1,2,3,4" data-dt-excelBtnColumns="1,2,3,4">
                           <thead>
                               <tr>
                                   <th data-dt-columnName="control" data-dt-render="controlRender" data-columnWidth="2%"></th>
-                                  <th class="no-wrap" data-prority="1" data-dt-columnName="material" data-columnWidth="25%" data-dt-searcheable data-dt-orderable>Material</th>
-                                  <th class="no-wrap" data-prority="2" data-dt-columnName="descripcion" data-columnWidth="25%" data-dt-orderable>Descripción</th>
-                                  <th class="no-wrap" data-prority="3" data-dt-columnName="planta" data-columnWidth="25%" data-dt-orderable>Planta</th>
-                                  <th class="no-wrap" data-prority="4" data-dt-columnName="stockLibre" data-columnWidth="25%" data-dt-orderable>Stock libre</th>
-                                  <th class="no-wrap" data-prority="5" data-dt-columnName="um" data-columnWidth="25%" data-dt-orderable>UM</th>
-                                  
+                                  <th class="no-wrap" data-prority="1" data-dt-columnName="nCotizar" data-columnWidth="25%" data-dt-searcheable data-dt-orderable>No cotización</th>
+                                  <th class="no-wrap" data-prority="2" data-dt-columnName="material" data-columnWidth="25%" data-dt-orderable>Material</th>
+                                  <th class="no-wrap" data-prority="3" data-dt-columnName="descripcion" data-columnWidth="25%" data-dt-orderable>Descripción</th>
+                                  <th class="no-wrap" data-prority="4" data-dt-columnName="cantidad" data-columnWidth="25%" data-dt-orderable>Cantidad</th>
+                                  <th class="no-wrap" data-prority="5" data-dt-columnName="UnidadMedida" data-columnWidth="25%" data-dt-orderable>Unidad de medida</th>
+                                  <th class="no-wrap" data-prority="5" data-dt-columnName="total" data-columnWidth="25%" data-dt-orderable>Total</th>
+                                  <th class="no-wrap" data-prority="5" data-dt-columnName="accion" data-columnWidth="25%" data-dt-orderable>Acción</th>
                               </tr>
                           </thead>
                           <tbody></tbody>
@@ -279,6 +248,109 @@
           <br>
       </div>
   </script>
+
+  <script id="detallePedido_template" type="x-tmpl-mustache">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
+                <div id="detallePedido_content" style="width: 100%">
+                    <table id="detallePedido" class="table table-hover table-striped table-bordered" width="100%" data-dt-pdfBtn data-dt-excelBtn data-dt-pdfBtnColumns="1,2,3,4" data-dt-excelBtnColumns="1,2,3,4">
+                        <thead>
+                            <tr>
+                                <th data-dt-columnName="control" data-dt-render="controlRender" data-columnWidth="2%"></th>
+                                <th class="no-wrap" data-prority="1" data-dt-columnName="pos" data-columnWidth="25%" data-dt-searcheable data-dt-orderable>Pos.</th>
+                                <th class="no-wrap" data-prority="2" data-dt-columnName="Nmaterial" data-columnWidth="25%" data-dt-orderable>No.Mat</th>
+                                <th class="no-wrap" data-prority="3" data-dt-columnName="descripcion" data-columnWidth="25%" data-dt-orderable>Descripción</th>
+                                <th class="no-wrap" data-prority="4" data-dt-columnName="cant" data-columnWidth="25%" data-dt-orderable>Cant.</th>
+                                <th class="no-wrap" data-prority="5" data-dt-columnName="cantEnt" data-columnWidth="25%" data-dt-orderable>Cant. ent</th>
+                                <th class="no-wrap" data-prority="5" data-dt-columnName="total" data-columnWidth="25%" data-dt-orderable>Total</th>
+                                <th class="no-wrap" data-prority="5" data-dt-columnName="um" data-columnWidth="25%" data-dt-orderable>UM</th>
+                                <th class="no-wrap" data-prority="5" data-dt-columnName="monto" data-columnWidth="25%" data-dt-orderable>Monto</th>
+                                <th class="no-wrap" data-prority="5" data-dt-columnName="precNeto" data-columnWidth="25%" data-dt-orderable>Precio neto</th>
+                                <th class="no-wrap" data-prority="5" data-dt-columnName="fecEnt" data-columnWidth="25%" data-dt-orderable>Fec Ent</th>
+                                <th class="no-wrap" data-prority="5" data-dt-columnName="Estatus" data-columnWidth="25%" data-dt-orderable>Estatus</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <button id="cotizar" class="btn btn-primary float-right" role="button"
+              name="buscar">Cotizar flete</button>
+          </div>
+        </div>
+    </div>
+</script>
+
+<script id="cotizacionFlete_template" type="x-tmpl-mustache">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="form-group text-left">
+          <label for="" class=""><strong>Cotización</strong></label>
+          <label for="" id="Labelcotizacion"class="">12133434</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <div class="form-group text-left">
+            <label for="" class=" ">Fecha de expiración</label>
+            <div class="input-group date date-start1">
+              <input id="date_startExpiracion" name="date_startExpiracion" type="text" class="form-control" />
+              <div class="input-group-append">
+                <span class="input-group-text far fa-calendar-alt"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <div class="form-group text-left">
+            <label for="" class="">MXN</label>
+            <input type="text" class="form-control" id="input_nMatDesc" name="input_nMatDesc"
+              placeholder="">
+          </div>
+        </div>
+     
+    </div>
+      <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
+              <div id="cotizacionFlete_content" style="width: 100%">
+                  <table id="cotizacionFlete" class="table table-hover table-striped table-bordered" width="100%" data-dt-pdfBtn data-dt-excelBtn data-dt-pdfBtnColumns="1,2,3,4" data-dt-excelBtnColumns="1,2,3,4">
+                      <thead>
+                          <tr>
+                              <th data-dt-columnName="control" data-dt-render="controlRender" data-columnWidth="2%"></th>
+                              <th class="no-wrap" data-prority="1" data-dt-columnName="pos" data-columnWidth="25%" data-dt-searcheable data-dt-orderable>Pos.</th>
+                              <th class="no-wrap" data-prority="2" data-dt-columnName="Nmaterial" data-columnWidth="25%" data-dt-orderable>No.Mat</th>
+                              <th class="no-wrap" data-prority="3" data-dt-columnName="descripcion" data-columnWidth="25%" data-dt-orderable>Descripción</th>
+                              <th class="no-wrap" data-prority="4" data-dt-columnName="cant" data-columnWidth="25%" data-dt-orderable>Cant.</th>
+                              <th class="no-wrap" data-prority="5" data-dt-columnName="cantEnt" data-columnWidth="25%" data-dt-orderable>Cant. ent</th>
+                              <th class="no-wrap" data-prority="5" data-dt-columnName="total" data-columnWidth="25%" data-dt-orderable>Total</th>
+                              <th class="no-wrap" data-prority="5" data-dt-columnName="um" data-columnWidth="25%" data-dt-orderable>UM</th>
+                              <th class="no-wrap" data-prority="5" data-dt-columnName="monto" data-columnWidth="25%" data-dt-orderable>Monto</th>
+                              <th class="no-wrap" data-prority="5" data-dt-columnName="precNeto" data-columnWidth="25%" data-dt-orderable>Precio neto</th>
+                              <th class="no-wrap" data-prority="5" data-dt-columnName="fecEnt" data-columnWidth="25%" data-dt-orderable>Fec Ent</th>
+                              <th class="no-wrap" data-prority="5" data-dt-columnName="Estatus" data-columnWidth="25%" data-dt-orderable>Estatus</th>
+                          </tr>
+                      </thead>
+                      <tbody></tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <button id="grabar" class="btn btn-primary float-right" role="button"
+            name="buscar">Grabar</button>
+        </div>
+      </div>
+  </div>
+</script>
 </body>
 
 </html>
