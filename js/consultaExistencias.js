@@ -335,21 +335,23 @@ var buscarPor = null;
 
   $('#buscar').off().on('click', function () {
   
+    if($("#input_nMatDesc").val() !== "" && $("#input_nMatDesc").val().length > 0){
     loadMustacheTemplate('searchProducts_template', 'cardDynamicBody');
     cargarDTSearchProductos.fill();
     $('div.hidden').removeClass('hidden');
   
     $('.collapse').collapse('hide');
     $('.isResizable').matchHeight();
-    
+    }else{
+        showToastr('El No. de Material es obligatorio.', 'Aviso', {
+            type: typeNotification.warning
+        })
+    }
   });
 
-  $('#select_estado').off().on('click', function () {
-      if(buscarPor == 1){
-        comboLocaliad.fill();
-      }
-    
-    
+  $('#select_estado').on("change", function ()  {
+        comboLocaliad.fill($(this).val());
+
   });
 
 

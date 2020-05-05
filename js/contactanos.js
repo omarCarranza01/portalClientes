@@ -35,7 +35,7 @@ var motivQueja = (function () {
                     }
 
                     var selectTemplate = renderMustacheTemplate('select2_template', result);
-
+                    $("#select_motivoQueja").append("<option></option>");
                     $("#select_motivoQueja").append(selectTemplate);
                     $("#select_motivoQueja").select2({
                         theme: "bootstrap",
@@ -103,7 +103,7 @@ var motivQueja = (function () {
                     }
 
                     var selectTemplate = renderMustacheTemplate('select2_template', result);
-
+                    $("#select_planta").append("<option></option>");
                     $("#select_planta").append(selectTemplate);
                     $("#select_planta").select2({
                         theme: "bootstrap",
@@ -171,7 +171,7 @@ var motivQueja = (function () {
                     }
 
                     var selectTemplate = renderMustacheTemplate('select2_template', result);
-
+                    $("#select_tipoDocumento").append("<option></option>");
                     $("#select_tipoDocumento").append(selectTemplate);
                     $("#select_tipoDocumento").select2({
                         theme: "bootstrap",
