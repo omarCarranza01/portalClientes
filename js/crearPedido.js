@@ -173,6 +173,9 @@ var crearPedido = (function () {
                 $('#cardDynamicHeaderTitle').html('Resumen cuenta');
                 return cargarDTResumenCuentaPartidas.fill()
                     .then(function () {
+                        return cargarDTResumenCuentaFacturacion.fill();
+                    })
+                    .then(function () {
                         initEvents();
                     });
             } else {
