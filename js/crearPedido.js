@@ -498,6 +498,7 @@ var crearPedido = (function () {
                         order: [0, 'asc'],
                         scrollX: true,
                         searching: true,
+                        paging: true,
                         data: rs,
                         responsive: true,
                         free: function (data, type, row, meta) {
@@ -612,6 +613,7 @@ var crearPedido = (function () {
                         order: [0, 'asc'],
                         scrollX: true,
                         searching: true,
+                        paging: true,
                         data: model,
                         responsive: true,
                         actions: function (data, type, row, meta) {
@@ -847,6 +849,7 @@ var crearPedido = (function () {
                         order: [0, 'asc'],
                         scrollX: true,
                         searching: true,
+                        paging: true,
                         data: model,
                         responsive: true,
                         rowCallback: function (row, data, api) {
@@ -947,6 +950,7 @@ var crearPedido = (function () {
                         order: [0, 'asc'],
                         scrollX: true,
                         searching: true,
+                        paging: true,
                         data: rs,
                         responsive: true,
                         free: function (data, type, row, meta) {
@@ -1042,6 +1046,7 @@ var crearPedido = (function () {
                 order: [0, 'asc'],
                 scrollX: true,
                 searching: true,
+                paging: true,
                 data: model,
                 responsive: true
             });
@@ -1075,6 +1080,7 @@ var crearPedido = (function () {
                 order: [0, 'asc'],
                 scrollX: true,
                 searching: true,
+                paging: true,
                 data: model,
                 responsive: true
             });

@@ -48,8 +48,11 @@ var consultaExistencia = (function () {
         tableResultArr.push(model);
         count++;
     }
+    
     console.log(tableResultArr);
- 
+    RESS.setCotizaciones(tableResultArr);
+    
+    cotizarFlete.fill();
      
     });
   }
@@ -169,7 +172,7 @@ var consultaExistencia = (function () {
             monto: "121",
             precNeto: "1212",
             fecEnt: "12/12/2029",
-            Estatus: "",
+            estatus: "",
           },
           {
             pos: "2",
@@ -182,7 +185,7 @@ var consultaExistencia = (function () {
             monto: "121",
             precNeto: "1212",
             fecEnt: "12/12/2029",
-            Estatus: "",
+            estatus: "",
           },
         ];
         resolve(model);
@@ -193,13 +196,32 @@ var consultaExistencia = (function () {
   var cotizarFlete = {
     fill: function () {
       return this.data()
-        .then(function (rs) {
+        .then(function () {
+          var ressObj = RESS.getRESSObject(),
+          rs = ressObj.seleccionCotizaciones;
           if (!rs) {
-            showToastr("Error en la carga", "Aviso", {
-              type: typeNotification.warning,
-            });
+            showToastr('No existen', 'Aviso', {
+                type: typeNotification.warning
+            })
             return false;
           }
+
+          var model = rs.map(function (a, e) {
+            var obj = {
+                pos: a.data.pos,
+                Nmaterial: a.data.Nmaterial ,
+               descripcion: a.data.descripcion,
+               cant:a.data.cant,
+               cantEnt: a.data.cantEnt,
+                total: a.data.total,
+                um: a.data.um,
+                monto: a.data.monto,
+                precNeto: a.data.precNeto,
+                fecEnt: moment().utc().format('DD/MM/YYYY'),
+                estatus:a.data.estatus
+            };
+            return obj;
+        });
 
           if ($dt) {
             $dt.clear().destroy();
@@ -208,8 +230,9 @@ var consultaExistencia = (function () {
             order: [0, "asc"],
             scrollX: true,
             searching: true,
-            data: rs,
+            data: model,
             responsive: true,
+            paging: true,
             free: function (data, type, row, meta) { },
             rowCallback: function (row, data, api) { },
           });
@@ -223,37 +246,11 @@ var consultaExistencia = (function () {
         });
     },
     data: function () {
-      return new Promise(function (resolve, reject) {
-        var model = [
-          {
-            pos: "121213",
-            Nmaterial: "121213",
-            descripcion: "34ddsds",
-            cant: "Material 1",
-            cantEnt: "12 pz",
-            total: "Mts",
-            um: "200",
-            monto: "121",
-            precNeto: "1212",
-            fecEnt: "12/12/2029",
-            Estatus: "",
-          },
-          {
-            pos: "121213",
-            Nmaterial: "121213",
-            descripcion: "34ddsds",
-            cant: "Material 1",
-            cantEnt: "12 pz",
-            total: "Mts",
-            um: "200",
-            monto: "121",
-            precNeto: "1212",
-            fecEnt: "12/12/2029",
-            Estatus: "",
-          },
-        ];
-        resolve(model);
+     
+        return new Promise(function (resolve, reject) {
+          resolve();
       });
+    
     },
   };
 
