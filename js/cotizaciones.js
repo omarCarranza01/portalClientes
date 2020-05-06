@@ -2,7 +2,7 @@ var consultaExistencia = (function () {
   var $dt = null;
 
   var init = function () {
-
+    initEvents();
 
     $("div.date.date-start").datepicker({
       format: "dd/mm/yyyy",
@@ -19,7 +19,40 @@ var consultaExistencia = (function () {
 
 
   };
+  var initEvents = function () {
 
+    $("#buscar").off().on("click", function () {
+      loadMustacheTemplate("listaCotizacion_template", "cardDynamicBody");
+      listaCotizacion.fill();
+      $("div.hidden").removeClass("hidden");
+  
+      $(".collapse").collapse("hide");
+      $(".isResizable").matchHeight();
+    });
+  
+   
+    $("#btnCotizar").off().on("click", function(e) {
+      loadMustacheTemplate("cotizacionFlete_template", "cardDynamicBody");
+      var rowsCount = $dt.rows().count(),
+      tableResultArr = [],
+      count = 0;
+      while (count < rowsCount) {
+        var rowCurrent = $dt.row(count),
+            nodesCurrent = rowCurrent.nodes(),
+            inputCantidad = nodesCurrent.to$().find('input.input_searchProductCantidad'),
+            data = rowCurrent.data();
+
+        var model = {
+            data: data
+        }
+        tableResultArr.push(model);
+        count++;
+    }
+    console.log(tableResultArr);
+ 
+     
+    });
+  }
   var listaCotizacion = {
     fill: function () {
       return this.data()
@@ -39,6 +72,7 @@ var consultaExistencia = (function () {
             scrollX: true,
             searching: true,
             data: rs,
+            paging: true,
             responsive: true,
             free: function (data, type, row, meta) {
               return renderMustacheTemplate('button_template', { id: 'btn_view', class: 'btn_viewClass', role: 'button', name: 'btn_view', text: 'Ver' })
@@ -46,6 +80,9 @@ var consultaExistencia = (function () {
             rowCallback: function (row, data, api) {
               $(row).find('.btn_viewClass').off().on('click', function (e) {
                 console.log('le dio click', data);
+                loadMustacheTemplate("detallePedido_template", "cardDynamicBody");
+                detallePedido.fill();
+                initEvents();
               });
             },
           });
@@ -104,6 +141,74 @@ var consultaExistencia = (function () {
             scrollX: true,
             searching: true,
             data: rs,
+            paging: true,
+            responsive: true,
+            free: function (data, type, row, meta) { },
+            rowCallback: function (row, data, api) { },
+          });
+          return true;
+        })
+        .catch(function () {
+          showToastr("Error en la carga", "Aviso", {
+            type: typeNotification.warning,
+          });
+          return false;
+        });
+    },
+    data: function () {
+      return new Promise(function (resolve, reject) {
+        var model = [
+          {
+            pos: "1",
+            Nmaterial: "121213",
+            descripcion: "34ddsds",
+            cant: "Material 1",
+            cantEnt: "12 pz",
+            total: "Mts",
+            um: "200",
+            monto: "121",
+            precNeto: "1212",
+            fecEnt: "12/12/2029",
+            Estatus: "",
+          },
+          {
+            pos: "2",
+            Nmaterial: "121213",
+            descripcion: "34ddsds",
+            cant: "Material 1",
+            cantEnt: "12 pz",
+            total: "Mts",
+            um: "200",
+            monto: "121",
+            precNeto: "1212",
+            fecEnt: "12/12/2029",
+            Estatus: "",
+          },
+        ];
+        resolve(model);
+      });
+    },
+  };
+
+  var cotizarFlete = {
+    fill: function () {
+      return this.data()
+        .then(function (rs) {
+          if (!rs) {
+            showToastr("Error en la carga", "Aviso", {
+              type: typeNotification.warning,
+            });
+            return false;
+          }
+
+          if ($dt) {
+            $dt.clear().destroy();
+          }
+          $dt = document.querySelector("#cotizacionFlete").rssDataTable({
+            order: [0, "asc"],
+            scrollX: true,
+            searching: true,
+            data: rs,
             responsive: true,
             free: function (data, type, row, meta) { },
             rowCallback: function (row, data, api) { },
@@ -155,18 +260,7 @@ var consultaExistencia = (function () {
 
 
 
-  $("#buscar").off().on("click", function () {
-    loadMustacheTemplate("listaCotizacion_template", "cardDynamicBody");
-    listaCotizacion.fill();
-    $("div.hidden").removeClass("hidden");
 
-    $(".collapse").collapse("hide");
-    $(".isResizable").matchHeight();
-  });
-
-  $("#select_estado").on("change", function () {
-    comboLocaliad.fill();
-  });
 
   return {
     init: init,

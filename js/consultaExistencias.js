@@ -282,6 +282,7 @@ var buscarPor = null;
                     order: [0, 'asc'],
                     scrollX: true,
                     searching: true,
+                    paging: true,
                     data: rs,
                     responsive: true,
                     free: function (data, type, row, meta) {
