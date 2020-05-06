@@ -222,6 +222,10 @@
         {{/.}}
     </script>
 
+    <script id="button_template" type="x-tmpl-mustache">
+      <button id="{{id}}" class="btn btn-primary {{class}}" role="{{role}}" name="{{name}}">{{text}}</button>
+  </script>
+
     <script id="listaCotizacion_template" type="x-tmpl-mustache">
       <div class="container">
           <div class="row">
@@ -237,7 +241,7 @@
                                   <th class="no-wrap" data-prority="4" data-dt-columnName="cantidad" data-columnWidth="25%" data-dt-orderable>Cantidad</th>
                                   <th class="no-wrap" data-prority="5" data-dt-columnName="UnidadMedida" data-columnWidth="25%" data-dt-orderable>Unidad de medida</th>
                                   <th class="no-wrap" data-prority="5" data-dt-columnName="total" data-columnWidth="25%" data-dt-orderable>Total</th>
-                                  <th class="no-wrap" data-prority="5" data-dt-columnName="accion" data-columnWidth="25%" data-dt-orderable>Acción</th>
+                                  <th class="no-wrap" data-prority="5" data-dt-render="free" data-columnWidth="25%" data-dt-orderable>Acción</th>
                               </tr>
                           </thead>
                           <tbody></tbody>

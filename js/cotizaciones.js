@@ -5,19 +5,19 @@ var consultaExistencia = (function () {
 
 
     $("div.date.date-start").datepicker({
-        format: "dd/mm/yyyy",
-        weekStart: 0,
-        maxViewMode: 2,
-        todayBtn: "linked",
-        language: "es",
-        orientation: "bottom auto",
-        daysOfWeekHighlighted: "0,6",
-        autoclose: true,
-        todayHighlight: true,
-        startDate: "01/01/1900",
-      });
+      format: "dd/mm/yyyy",
+      weekStart: 0,
+      maxViewMode: 2,
+      todayBtn: "linked",
+      language: "es",
+      orientation: "bottom auto",
+      daysOfWeekHighlighted: "0,6",
+      autoclose: true,
+      todayHighlight: true,
+      startDate: "01/01/1900",
+    });
 
-    
+
   };
 
   var listaCotizacion = {
@@ -40,8 +40,14 @@ var consultaExistencia = (function () {
             searching: true,
             data: rs,
             responsive: true,
-            free: function (data, type, row, meta) {},
-            rowCallback: function (row, data, api) {},
+            free: function (data, type, row, meta) {
+              return renderMustacheTemplate('button_template', { id: 'btn_view', class: 'btn_viewClass', role: 'button', name: 'btn_view', text: 'Ver' })
+            },
+            rowCallback: function (row, data, api) {
+              $(row).find('.btn_viewClass').off().on('click', function (e) {
+                console.log('le dio click', data);
+              });
+            },
           });
           return true;
         })
@@ -99,8 +105,8 @@ var consultaExistencia = (function () {
             searching: true,
             data: rs,
             responsive: true,
-            free: function (data, type, row, meta) {},
-            rowCallback: function (row, data, api) {},
+            free: function (data, type, row, meta) { },
+            rowCallback: function (row, data, api) { },
           });
           return true;
         })
@@ -122,7 +128,7 @@ var consultaExistencia = (function () {
             cantEnt: "12 pz",
             total: "Mts",
             um: "200",
-            monto:"121",
+            monto: "121",
             precNeto: "1212",
             fecEnt: "12/12/2029",
             Estatus: "",
@@ -135,7 +141,7 @@ var consultaExistencia = (function () {
             cantEnt: "12 pz",
             total: "Mts",
             um: "200",
-            monto:"121",
+            monto: "121",
             precNeto: "1212",
             fecEnt: "12/12/2029",
             Estatus: "",
@@ -146,17 +152,17 @@ var consultaExistencia = (function () {
     },
   };
 
- 
+
 
 
   $("#buscar").off().on("click", function () {
-      loadMustacheTemplate("listaCotizacion_template", "cardDynamicBody");
-      listaCotizacion.fill();
-      $("div.hidden").removeClass("hidden");
+    loadMustacheTemplate("listaCotizacion_template", "cardDynamicBody");
+    listaCotizacion.fill();
+    $("div.hidden").removeClass("hidden");
 
-      $(".collapse").collapse("hide");
-      $(".isResizable").matchHeight();
-    });
+    $(".collapse").collapse("hide");
+    $(".isResizable").matchHeight();
+  });
 
   $("#select_estado").on("change", function () {
     comboLocaliad.fill();
