@@ -4,6 +4,13 @@ var consultaExistencia = (function () {
   var init = function () {
     initEvents();
 
+  
+    
+  
+
+
+  };
+  var initEvents = function () {
     $("div.date.date-start").datepicker({
       format: "dd/mm/yyyy",
       weekStart: 0,
@@ -16,13 +23,6 @@ var consultaExistencia = (function () {
       todayHighlight: true,
       startDate: "01/01/1900",
     });
-    
-  
-
-
-  };
-  var initEvents = function () {
-
     $("#buscar").off().on("click", function () {
       loadMustacheTemplate("listaCotizacion_template", "cardDynamicBody");
       listaCotizacion.fill();
@@ -51,10 +51,11 @@ var consultaExistencia = (function () {
         count++;
     }
     
-    console.log(tableResultArr);
+   
     RESS.setCotizaciones(tableResultArr);
     
     cotizarFlete.fill();
+    initEvents();
      
     });
   }
