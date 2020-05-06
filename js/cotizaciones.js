@@ -16,6 +16,8 @@ var consultaExistencia = (function () {
       todayHighlight: true,
       startDate: "01/01/1900",
     });
+    
+  
 
 
   };
