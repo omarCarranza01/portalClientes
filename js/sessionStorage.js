@@ -41,6 +41,9 @@ var RESS = (function () {
         _setRESSProperty('comentarios', comentarios);
     }
 
+    function _setCotizaciones(seleccionCotizaciones) {
+        _setRESSProperty('seleccionCotizaciones', seleccionCotizaciones);
+    }
     function _setRESSProperty(key, value) {
         var _RESSJson = sessionStorage.getItem(_RESSName),
             _RESS = {};
@@ -56,7 +59,8 @@ var RESS = (function () {
                 metodoPagoSeleccionado: null,
                 seleccionMateriales: null,
                 usoMaterialSeleccionado: null,
-                comentarios: null
+                comentarios: null,
+                seleccionCotizaciones: null
             };
         } else {
             _RESS = JSON.parse(_RESSJson);
@@ -91,6 +95,7 @@ var RESS = (function () {
         setMetodoPagoSeleccionado: _setMetodoPagoSeleccionado,
         setSeleccionMateriales: _setSeleccionMateriales,
         setUsoMaterialSeleccionado: _setUsoMaterialSeleccionado,
-        setComentarios: _setComentarios
+        setComentarios: _setComentarios,
+        setCotizaciones: _setCotizaciones
     };
 })();
