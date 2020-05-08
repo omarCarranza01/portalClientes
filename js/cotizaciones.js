@@ -89,7 +89,7 @@ var consultaExistencia = (function () {
              
             },
             rowCallback: function (row, data, api) {
-              $('#dt_searchListaCotizacion tbody').on('click', 'tr', function () {
+              $(row).off().on('click', 'td', function () {
                 console.log('le dio click', data);
                 loadMustacheTemplate("detallePedido_template", "cardDynamicBody");
                 detallePedido.fill();
@@ -111,7 +111,7 @@ var consultaExistencia = (function () {
       return new Promise(function (resolve, reject) {
         var model = [
           {
-            nCotizar: "121213",
+            nCotizar: "11",
             material: "34ddsds",
             descripcion: "Material 1",
             cantidad: "12 pz",
@@ -120,7 +120,7 @@ var consultaExistencia = (function () {
             estatus: "",
           },
           {
-            nCotizar: "121213",
+            nCotizar: "22",
             material: "34ddsds",
             descripcion: "Material 1",
             cantidad: "12 pz",
@@ -171,7 +171,7 @@ var consultaExistencia = (function () {
       return new Promise(function (resolve, reject) {
         var model = [
           {
-            pos: "1",
+            pos: "11",
             Nmaterial: "121213",
             descripcion: "34ddsds",
             cant: "Material 1",
