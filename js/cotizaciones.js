@@ -11,6 +11,7 @@ var consultaExistencia = (function () {
 
   };
   var initEvents = function () {
+   
     $("div.date.date-start").datepicker({
       format: "dd/mm/yyyy",
       weekStart: 0,
@@ -58,6 +59,10 @@ var consultaExistencia = (function () {
     initEvents();
      
     });
+
+  
+
+
   }
   var listaCotizacion = {
     fill: function () {
@@ -81,15 +86,16 @@ var consultaExistencia = (function () {
             paging: true,
             responsive: true,
             free: function (data, type, row, meta) {
-              return renderMustacheTemplate('button_template', { id: 'btn_view', class: 'btn_viewClass', role: 'button', name: 'btn_view', text: 'Ver' })
+             
             },
             rowCallback: function (row, data, api) {
-              $(row).find('.btn_viewClass').off().on('click', function (e) {
+              $('#dt_searchListaCotizacion tbody').on('click', 'tr', function () {
                 console.log('le dio click', data);
                 loadMustacheTemplate("detallePedido_template", "cardDynamicBody");
                 detallePedido.fill();
                 initEvents();
-              });
+            } );
+             
             },
           });
           return true;
@@ -111,7 +117,7 @@ var consultaExistencia = (function () {
             cantidad: "12 pz",
             UnidadMedida: "Mts",
             total: "200",
-            accion: "",
+            estatus: "",
           },
           {
             nCotizar: "121213",
@@ -120,7 +126,7 @@ var consultaExistencia = (function () {
             cantidad: "12 pz",
             UnidadMedida: "Mts",
             total: "200",
-            accion: "",
+            estatus: "",
           },
         ];
         resolve(model);
