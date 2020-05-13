@@ -939,7 +939,20 @@ $(document).ready(function () {
       }, 100);
     });
 
-    $("tbody > tr .colorLetra").off().on("click", function () {
+    // $("tbody > tr .colorLetra").off().on("click", function () {
+    //   $("#myModal").modal("toggle");
+    //   if ($example2) {
+    //     $example2.clear().destroy();
+    //   }
+    //   if ($example3) {
+    //     $example3.clear().destroy();
+    //   }
+    //   example2Func(data2);
+    //   example3Func(data3);
+    // });
+
+    $('#example tbody').off().on('click', 'tr', function () {
+      var data = $expampleDT.row(this).data();
       $("#myModal").modal("toggle");
       if ($example2) {
         $example2.clear().destroy();
@@ -960,11 +973,11 @@ $(document).ready(function () {
       }, 200);
     });
 
-    $("#setFilters").off().on('click', function (e) {
-      var estatus = $("#select_estatus :selected").val(),
-        fechaInicio = $("#date_start").val(),
-        fechaFin = $("#date_end").val(),
-        por = $("#select_por :selected").val();
+    $("#setFilters").off().on('click', function (e) { //[id='from:']
+      var estatus = $("[id='from:select_estatus'] :selected").val(),
+        fechaInicio = $("[id='from:date_start']").val(),
+        fechaFin = $("[id='from:date_end']").val(),
+        por = $("[id='from:select_por'] :selected").val();
 
       var filter = inpescIngreso.filter(function (a, b) {
         var convFecha = moment(a.creado, 'DD/MM/YYYY');
